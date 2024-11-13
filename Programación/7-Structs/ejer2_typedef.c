@@ -7,10 +7,10 @@ struct Vehiculo{
 	char modelo[100];
 	int anio;
 	int kilometraje;
-};
+} Vehiculo;
 
 int main() {
-	struct Vehiculo miVehiculo;
+	Vehiculo miVehiculo;
 
 	strcpy(miVehiculo.marca, "Toyota");
 	strcpy(miVehiculo.modelo, "Corolla");

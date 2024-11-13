@@ -1,0 +1,6 @@
+*: declaración de variable
+y acceder al contenido
+
+&: obtener la dirección variable
+un puntero es una variable que almacena la dir. de memoria de otra variable
+lleva & pq tengo que darle la dir de memoria dnd está 'x'
