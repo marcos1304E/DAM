@@ -7,7 +7,7 @@ int main(){
 	int suma = 0;
 	for (int i = 0; i < 5; i++) {
 	suma += *(p+i);
-	//nivel pro: suma += *(++p)
+	//suma += *(++p)
 	}
 
 	printf("suma: %d\n\n");
