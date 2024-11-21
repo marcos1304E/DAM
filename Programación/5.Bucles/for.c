@@ -9,7 +9,7 @@ int main(){
 	
 	for (/*valor inicial*/ i=0 ; i<5/*condicion*/ ; i = i + 1/*Codigo a ejecuitar entre vueltas*/ ){
 	
-printf("%d", 1);
+printf("%d", i);
 	}
 	printf("Terminado\n");
 	/**
