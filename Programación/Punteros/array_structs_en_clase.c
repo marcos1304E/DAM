@@ -57,7 +57,8 @@ void cumpleanios(Estudiante * cumpleanero){
 
 
 
-
+//crea una funcion que cree una cadena de texton con la informacion del estudiante.
+//Puedes empezar creando una funcion que imprima x pantalla la info de un estudiante
 int main(){
 
 	int num_estudiantes;
@@ -95,5 +96,9 @@ int main(){
 	//cumpleanios(&listado[0];
 
 	printf("Edad nueva: %d\n",listado[0].edad);
+	//Tambien es valido
+	printf("Edad nueva :%d\n", listado->edad);
+	printf("Edad nueva: %d\n",);
+	
 	return 0;
 }
