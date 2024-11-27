@@ -55,6 +55,16 @@ void cumpleanios(Estudiante * cumpleanero){
 
 }
 
+/*27/11 VAMOS A CREAR UNA FUNCION PARA IMPRIMIR UN ESTUDIANTE. LO VAMOS A HACER DE 2 FORMAS*/
+
+
+//Recibe un estudiante y muestra por pantalla todos sus datos
+void imprimirEstudiante(const Estudiante * estudiante_a_imprimir){ //Cuando paso por referencia apilo la direccion de memoria
+printf("Nombre: %s\n", estudiante_a_imprimir->nombre);
+printf("Edad: %d\n", estudiante_a_imprimir->edad);
+printf("Nota: %f\n", estudiante_a_imprimir->nota);
+
+}
 
 
 //crea una funcion que cree una cadena de texton con la informacion del estudiante.
@@ -93,12 +103,19 @@ int main(){
 	//El estudiante de la primera posicion ha cumplido años
 	printf("Edad antigua de %s: %d\n",listado[0].nombre, listado->edad);
 	cumpleanios(&listado[0]/*DIR DE MEMORIA*/ );
-	//cumpleanios(&listado[0];
 
+
+	//cumpleanios(&listado[0];
 	printf("Edad nueva: %d\n",listado[0].edad);
 	//Tambien es valido
 	printf("Edad nueva :%d\n", listado->edad);
-	printf("Edad nueva: %d\n",);
+	printf("Edad nueva: %d\n", (*listado).edad);
+
+	//printf("%d",(listado+6)-> edad);
+
+	//VAMOS A IMPRIMIR ESTUDIANTES
+
+	imprimirEstudiante(&listado[0]);
 	
 	return 0;
 }
