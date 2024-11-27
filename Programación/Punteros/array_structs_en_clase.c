@@ -32,7 +32,7 @@ return estudiante_nuevo;
 //}
 
 
-void inicializar(Estudiante * estudiante_a_rellenar, char * nombre, int edad, float nota){
+void inicializar (Estudiante * estudiante_a_rellenar, char * nombre, int edad, float nota){
 
 	//Esto no compila: estudainte_a_rellenar.edad = edad; pq estudiante_a_rellenar
 	//es un puntero, no un estudiante.
