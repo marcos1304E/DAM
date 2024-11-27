@@ -38,7 +38,11 @@ printf("precio: ");
 printf("genero:");
 printf("cantidad:");
 */
+}
 int main(){
+
+int numero_libros, id,
+
 Libro libros [40] = {
 
 {1, "To Kill a Mockingbird", "Harper Lee", 15.99,FICCION, 10},
@@ -53,14 +57,14 @@ Libro libros [40] = {
         {10, "The Divine Comedy", "Dante Alighieri", 22.00, POESIA, 3},
         {11, "Leaves of Grass", "Walt Whitman", 13.00, POESIA, 11},
         {12, "The Iliad", "Homer", 18.50,FICCION, 7},
-        {13, "A Brief History of Time", "Stephen Hawking", 15.00, NO FICCION, 15},
-        {14, "The Art of War", "Sun Tzu", 9.99, NO FICCION, 20},
-        {15, "Sapiens: A Brief History of Humankind", "Yuval Noah Harari", 16.49, NO FICCION, 13},
-        {16, "The Selfish Gene", "Richard Dawkins", 14.00, NO FICCION, 6},
-        {17, "The Road to Serfdom", "F.A. Hayek", 10.50, NO FICCION, 5},
-        {18, "The Wealth of Nations", "Adam Smith", 30.00, NO FICCION, 8},
-        {19, "On the Origin of Species", "Charles Darwin", 24.99, NO FICCION, 4},
-        {20, "The Prince", "Niccolò Machiavelli", 8.99, NO FICCION, 14},
+        {13, "A Brief History of Time", "Stephen Hawking", 15.00, NO_FICCION, 15},
+        {14, "The Art of War", "Sun Tzu", 9.99, NO_FICCION, 20},
+        {15, "Sapiens: A Brief History of Humankind", "Yuval Noah Harari", 16.49, NO_FICCION, 13},
+        {16, "The Selfish Gene", "Richard Dawkins", 14.00, NO_FICCION, 6},
+        {17, "The Road to Serfdom", "F.A. Hayek", 10.50, NO_FICCION, 5},
+        {18, "The Wealth of Nations", "Adam Smith", 30.00, NO_FICCION, 8},
+        {19, "On the Origin of Species", "Charles Darwin", 24.99, NO_FICCION, 4},
+        {20, "The Prince", "Niccolò Machiavelli", 8.99, NO_FICCION, 14},
         {21, "Hamlet", "William Shakespeare", 11.50, TEATRO, 6},
         {22, "Macbeth", "William Shakespeare", 9.50, TEATRO, 8},
         {23, "Othello", "William Shakespeare", 10.99, TEATRO, 7},
@@ -85,7 +89,10 @@ Libro libros [40] = {
 };
 
 printf("¿Cuantos libros desea añadir?");
-scanf("%d",&);
+scanf("%d",&numero_libros);
 
-
+for(int i = 0; i < numero_libros;i++){
+		printf("Introduce el id: ");
+		scanf("%d",&id);
+return 0;
 }
