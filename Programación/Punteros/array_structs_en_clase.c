@@ -56,6 +56,14 @@ void cumpleanios(Estudiante * cumpleanero){
 
 }
 
+void renombrarEst(Estudiante * estudiante_a_modificar, char * nuevo_nombre ){
+
+
+strcpy(estudiante_a_modificar->nombre, nuevo_nombre);
+
+
+}
+
 /*27/11 VAMOS A CREAR UNA FUNCION PARA IMPRIMIR UN ESTUDIANTE. LO VAMOS A HACER DE 2 FORMAS*/
 
 
@@ -71,7 +79,7 @@ printf("Nota: %f\n", estudiante_a_imprimir->nota);
 //Convertir una estudiante a una cadena de texto
 
 //esta funcion da warning pq la variable retval deja de existir cuando acaba la funcion
- char * estudianteToString(const Estudiante * datos){
+ char * estudianteToString_Warning(const Estudiante * datos){
  	char retval[MAX_BUFFER];
  	//snprintf (donde, cuando, el que[lo que harias con un printf] )
  	snprintf(retval,MAX_BUFFER,"El estudiante %s de %d años ha sacado un %f",datos->nombre,datos->edad,datos->nota);
@@ -83,7 +91,7 @@ printf("Nota: %f\n", estudiante_a_imprimir->nota);
 char * estudianteToString(const Estudiante * datos,char * retval){
  	char retval[MAX_BUFFER];
  	//snprintf (donde, cuando, el que[lo que harias con un printf] )
- 	snprintf(retval,sizeof(retval),"El estudiante %s de %d años ha sacado un %f",datos->nombre,datos->edad,datos->nota);
+ 	snprintf(retval,MAX_BUFFER * sizeof(char) /*200 x 4 */,"El estudiante %s de %d años ha sacado un %f",datos->nombre,datos->edad,datos->nota);
 
 
 //No necesitamos un return retval
@@ -138,9 +146,18 @@ int main(){
 	//VAMOS A IMPRIMIR ESTUDIANTES
 
 	imprimirEstudiante(&listado[0]);
+
+
 	char StringARellenar[MAX_BUFFER];
 	estudianteToString(&listado[0], StringARellenar);
 	printf("%s\n", StringARellenar);
+	//El estudiante ... de ...años ...
 }
+//RENOMBRAR
+char nuevo_nombre[MAX_NOMBRE];
+printf("Introduce el nuevo nombre: ");
+scanf("%s", nuevo_nombre);
+renombrarEst(&listado[0], nuevo_nombre);
+imprimirEstudiante(&listado[0]);
 	return 0;
 }
