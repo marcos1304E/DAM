@@ -7,6 +7,7 @@
 //definimos las constantes
 #define MAX_NOMBRE 20
 #define MAX_ESTUDIANTES 20
+#define MAX_BUFFER 200
 
 typedef struct{
 	char nombre[MAX_NOMBRE];
@@ -66,6 +67,27 @@ printf("Nota: %f\n", estudiante_a_imprimir->nota);
 
 }
 
+//UNA FUNCION DE "IMPRIMIR" SIN LOS PRINTFS
+//Convertir una estudiante a una cadena de texto
+
+//esta funcion da warning pq la variable retval deja de existir cuando acaba la funcion
+ char * estudianteToString(const Estudiante * datos){
+ 	char retval[MAX_BUFFER];
+ 	//snprintf (donde, cuando, el que[lo que harias con un printf] )
+ 	snprintf(retval,MAX_BUFFER,"El estudiante %s de %d años ha sacado un %f",datos->nombre,datos->edad,datos->nota);
+
+
+ 	return retval;//quiero que sea una variable del main que aqui se utiliza y aqui se rellena
+
+}
+char * estudianteToString(const Estudiante * datos,char * retval){
+ 	char retval[MAX_BUFFER];
+ 	//snprintf (donde, cuando, el que[lo que harias con un printf] )
+ 	snprintf(retval,sizeof(retval),"El estudiante %s de %d años ha sacado un %f",datos->nombre,datos->edad,datos->nota);
+
+
+//No necesitamos un return retval
+
 
 //crea una funcion que cree una cadena de texton con la informacion del estudiante.
 //Puedes empezar creando una funcion que imprima x pantalla la info de un estudiante
@@ -116,6 +138,9 @@ int main(){
 	//VAMOS A IMPRIMIR ESTUDIANTES
 
 	imprimirEstudiante(&listado[0]);
-	
+	char StringARellenar[MAX_BUFFER];
+	estudianteToString(&listado[0], StringARellenar);
+	printf("%s\n", StringARellenar);
+}
 	return 0;
 }
