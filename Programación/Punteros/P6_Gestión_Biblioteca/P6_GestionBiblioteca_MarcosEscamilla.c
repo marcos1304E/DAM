@@ -29,7 +29,20 @@ typedef struct{
 
 
 
-void añadir_libro(Libro * libros, char * nuevo_libro){
+void añadir_libro(Libro * libro_a_añadir, char * nuevo_libro){
+
+strcpy(libro_a_añadir->titulo, nuevo_libro);
+
+
+}
+
+
+
+
+
+
+
+
 
 /*printf("id: ");
 printf("titulo: ");
@@ -38,10 +51,11 @@ printf("precio: ");
 printf("genero:");
 printf("cantidad:");
 */
-}
+//}
+
 int main(){
 
-int numero_libros, id,
+int numero_libros, id;
 
 Libro libros [40] = {
 
@@ -94,5 +108,14 @@ scanf("%d",&numero_libros);
 for(int i = 0; i < numero_libros;i++){
 		printf("Introduce el id: ");
 		scanf("%d",&id);
+        }
+
+void añadir_libro(Libro * libro_a_añadir, char * nuevo_libro){
+
+strcpy(libro_a_añadir->titulo, nuevo_libro);
+
+
+}
+
 return 0;
 }
