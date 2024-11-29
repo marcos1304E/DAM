@@ -52,7 +52,7 @@ void inicializar(Estudiante * estudiante_a_rellenar, char * nombre, int edad, fl
 
 // No es necesario un valor de retorno. 
 // Cumpleanero es un puntero porque va a ser modificado en la función
-void cumpleanios(Estudiante  * cumpleanero) {
+void cumpleanios(Estudiante * cumpleanero) {
 	cumpleanero->edad++;
 
 }
