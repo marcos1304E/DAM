@@ -62,7 +62,7 @@ void cumpleanios(Estudiante * cumpleanero) {
  * 27/11 - VAMOS A CREAR UNA FUNCIÓN PARA IMPRIMIR UN ESTUDIANTE. LO VAMOS A HACER DE 2 FORMAS 
  **/
 
-// Recibe un estudiante y muestra por pantalla todos sus datos
+// Recibe un estudiante y muestra por pantalla todos sus datos.
 void imprimirEstudiante(const Estudiante * estudiante_a_imprimir){
 	printf("Nombre: %s\n",estudiante_a_imprimir->nombre);
 	printf("\tEdad: %d\n",estudiante_a_imprimir->edad);
