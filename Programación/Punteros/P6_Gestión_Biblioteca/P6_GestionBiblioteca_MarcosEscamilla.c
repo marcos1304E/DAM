@@ -110,12 +110,9 @@ for(int i = 0; i < numero_libros;i++){
 		scanf("%d",&id);
         }
 
-void añadir_libro(Libro * libro_a_añadir, char * nuevo_libro){
-
-strcpy(libro_a_añadir->titulo, nuevo_libro);
 
 
-}
+
 
 return 0;
 }
