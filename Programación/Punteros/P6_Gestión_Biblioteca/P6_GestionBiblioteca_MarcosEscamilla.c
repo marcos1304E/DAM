@@ -4,7 +4,7 @@
 
 #define TITULO_MAX 60
 #define AUTOR_MAX 50
-
+#define CAT_MAX 41
 
 
 typedef enum{
@@ -29,14 +29,14 @@ typedef struct{
 
 
 
-void añadir_libro(Libro * libro_a_añadir, char * nuevo_libro){
+/*void añadir_libro(Libro * libro_a_añadir, char * nuevo_libro){
 
 strcpy(libro_a_añadir->titulo, nuevo_libro);
 
 
 }
 
-
+*/
 
 
 
@@ -55,19 +55,29 @@ printf("cantidad:");
 
 
 
-void printBook(Book * puntero_a_un_unico_libro){
+void printBook(Libro * puntero_a_un_unico_libro){//Muestra info de libro al que se le apunte
         
         printf("Id: %d\n",puntero_a_un_unico_libro->id);
-        printf("Id: %d\n",(puntero_a_un_unico_libro).id);
+        printf("Titulo: %d\n",puntero_a_un_unico_libro->titulo);
+        printf("Id: %d\n",puntero_a_un_unico_libro->autor);
+        printf("Id: %d\n",puntero_a_un_unico_libro->precio);
+        printf("Id: %d\n",puntero_a_un_unico_libro->genero);
+        printf("Id: %d\n",puntero_a_un_unico_libro->cantidad);
 
 }
 
 
+void libroPorId(Libro * /*id*/){
+
+        printf("Escribe el ID del libro: ");
+        scanf("%d", &);
+}
 
 
-void printAllBooks (Book * puntero_al_primer_libro_del_catalogo){
-        for(int i = 0;i < MAY tamaño catalogo; i++){
-                printBook(solo_un_libro)      
+
+void printAllBooks (Libro * puntero_al_primer_libro_del_catalogo){
+        for(int i = 0;i < CAT_MAX; i++){
+                printBook(puntero_al_primer_libro_del_catalogo);      
         }
 }
 
@@ -120,15 +130,26 @@ int main(){
         };
  
 
-        printf("¿Qué opción desea realizar?\n\
-               
-                1. Imprimir el primer libro
-                2. Buscar libro
+        printf("Catalogo completo:\n");
+
+        printAllBooks(libros);
+
+
+
+
+        libroPorId(libros);//Info de libro por id
+
+
+
+
+        printf("¿Qué opción desea realizar?
+
+                1. Añadir libro
+                2. Buscar por ID
                 3. Actualizar cantidad
-                4. Mostrar información detallada de los libros
+                4.Mostrar info detallada de libro
+");
 
-
-                ");
 
         printf("Opción: \n");
         scanf("%d", &menu);
@@ -138,7 +159,7 @@ int main(){
 
         case 1:
                 //Aqui llamamos a la funcion void que hemos creado arriba, printBook
-                printBook(&libros[0]);//se puede de las dos maneras, 
+                //printBook(&libros[0]);//se puede de las dos maneras, 
                 printBook(libros);//aqui mas facil, accedes al primer libro de los 40 que hay, si queremos el primero ponemos libros+1
 
         case 2:
