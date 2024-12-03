@@ -41,9 +41,6 @@ strcpy(libro_a_añadir->titulo, nuevo_libro);
 
 
 
-
-
-
 /*printf("id: ");
 printf("titulo: ");
 printf("autor: ");
@@ -53,13 +50,34 @@ printf("cantidad:");
 */
 //}
 
+
+//printAllBooks(books);
+
+
+
+void printBook(Book * puntero_a_un_unico_libro){
+        
+        printf("Id: %d\n",puntero_a_un_unico_libro->id);
+        printf("Id: %d\n",(puntero_a_un_unico_libro).id);
+
+}
+
+
+
+
+void printAllBooks (Book * puntero_al_primer_libro_del_catalogo){
+        for(int i = 0;i < MAY tamaño catalogo; i++){
+                printBook(solo_un_libro)      
+        }
+}
+
 int main(){
 
-int numero_libros, id;
+        int numero_libros, id, menu;
 
-Libro libros [40] = {
+        Libro libros [40] = {
 
-{1, "To Kill a Mockingbird", "Harper Lee", 15.99,FICCION, 10},
+        {1, "To Kill a Mockingbird", "Harper Lee", 15.99,FICCION, 10},
         {2, "1984", "George Orwell", 12.49,FICCION, 5},
         {3, "The Great Gatsby", "F. Scott Fitzgerald", 10.99,FICCION, 8},
         {4, "Moby Dick", "Herman Melville", 18.99,FICCION, 12},
@@ -99,9 +117,52 @@ Libro libros [40] = {
         {38, "The Communist Manifesto", "Karl Marx and Friedrich Engels", 5.99, ENSAYO, 12},
         {39, "The Republic", "Plato", 16.00, ENSAYO, 6},
         {40, "Thus Spoke Zarathustra", "Friedrich Nietzsche", 14.99, ENSAYO, 10}
+        };
+ 
+
+        printf("¿Qué opción desea realizar?\n\
+               
+                1. Imprimir el primer libro
+                2. Buscar libro
+                3. Actualizar cantidad
+                4. Mostrar información detallada de los libros
+
+
+                ");
+
+        printf("Opción: \n");
+        scanf("%d", &menu);
+
+
+        switch (menu){
+
+        case 1:
+                //Aqui llamamos a la funcion void que hemos creado arriba, printBook
+                printBook(&libros[0]);//se puede de las dos maneras, 
+                printBook(libros);//aqui mas facil, accedes al primer libro de los 40 que hay, si queremos el primero ponemos libros+1
+
+        case 2:
+
+
+        case 3:
+
+
+        case 4:
+
+
+
+        default:
+                printf("Elección no válida");
+
+        break;
 
 };
 
+
+
+
+
+/*
 printf("¿Cuantos libros desea añadir?");
 scanf("%d",&numero_libros);
 
@@ -110,6 +171,7 @@ for(int i = 0; i < numero_libros;i++){
 		scanf("%d",&id);
         }
 
+*/
 
 
 
