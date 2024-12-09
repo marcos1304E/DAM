@@ -11,7 +11,7 @@ Autor: Marcos Escamilla Ojeda
 Desarrollo de Aplicaciones Multiplataforma
 Programación
 Practica 6 -- Gestión de biblioteca
-*/
+*/ //mas comentarios
 
 typedef enum{ //Enum para que se definan directamente, equivaldria a poner arriba varios defines con #define FICCION 0, por ejemplo, pero mucho más sencillo así y nos podemos entender para que abajo en el codigo si podamos poner la palabra literal FICCION, si no tendríamos que poner un 0.
 	FICCION, // 0

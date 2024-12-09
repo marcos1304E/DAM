@@ -93,6 +93,7 @@ char * estudianteToString(const Estudiante * datos,char * retval){
  	//snprintf (donde, cuando, el que[lo que harias con un printf] )
  	snprintf(retval,MAX_BUFFER * sizeof(char) /*200 x 4 */,"El estudiante %s de %d años ha sacado un %f",datos->nombre,datos->edad,datos->nota);
 
+}
 
 //No necesitamos un return retval
 
