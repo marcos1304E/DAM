@@ -163,7 +163,7 @@ int main( int argc, char ** argv){ //int main(int argc, char ** argv){}...
         {39, "The Republic", "Plato", 16.00, ENSAYO, 6},
         {40, "Thus Spoke Zarathustra", "Friedrich Nietzsche", 14.99, ENSAYO, 10}
         };
- 
+
 
 printf("Lista de argumentos:\n");
 for(int i = 0; i<argc; i++){
@@ -171,8 +171,20 @@ for(int i = 0; i<argc; i++){
 
 }
 
+if(argc == 1)
+    //haz lo que hacia antes
+if(argc > 1){
+if(argv[1] == "mostrar"){
+    //Llamar a mostrar todo
+}
+if(argv[1] == "mostrar" && existe argv[2]){
+    //Llamar a mostrar el la de argv[2]
+}
+}
+
 return 0;
 }
+
 
 /*        
 
