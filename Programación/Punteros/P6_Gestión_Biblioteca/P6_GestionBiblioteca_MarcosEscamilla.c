@@ -111,7 +111,9 @@ void IncrementarStock(Libro * stock_libro){ //Aqui no se podría poner const Lib
     }
 }
 
-int main(){
+int main(){ //int main(int argc, char ** argv){}...
+            //argc: número de argumentos recibidos
+            //argv: array de cadenas de texto
 
         int numero_libros, id, menu;
 
