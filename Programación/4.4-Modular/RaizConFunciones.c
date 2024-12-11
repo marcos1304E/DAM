@@ -16,21 +16,27 @@ int calcularRaiz(){
 	scanf("%d",&valor);
 	raiz = sqrt(valor);
 	printf("La raiz cuadrada de %d es %lf\n", valor,raiz);
+	
+	return 0;//como ha ido bien, devuelve un 0.
 }
-return 0;//como ha ido bien, devuelve un 0.
 
-	void calcularArea(){ 		 										           double radio,area;
+void calcularArea(){
+
+	double radio,area;
 		
 
 	//parte del cálculo del area del circulo
 	printf("Introduzca el radio del circulo para calcular su área\n");
 	scanf("%lf",&radio);
 	area= radio * radio * M_PI; //M_PI está definido en math.h. Es una constante con el valor de pi.
-			printf("El área del circulo es %lf/n",area);
+	printf("El área del circulo es %lf/n",area);
 
-	}
+}
+
+
 int main(){
-		calcularRaiz();
+		int respuesta = calcularRaiz();
+
 		calcularRaiz();
 		calcularRariz();
 		
