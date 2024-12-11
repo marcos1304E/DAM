@@ -8,7 +8,7 @@ int main() {
 
 
 
-int *p = (int *) mallox (sizeof(int));
+int *p = (int *) malloc (sizeof(int));
 //esta es la buena practica
 
     if (p == NULL) { //Malloc ha fallado, puede fallar pq no hay memoria disponible, no deberia pasar, pero hay que tener cuidado, el codigo no seguiria, 
@@ -23,4 +23,3 @@ int *p = (int *) mallox (sizeof(int));
     free(p_error); // Liberamos la memoria reservada
     return 0;
 }
-
