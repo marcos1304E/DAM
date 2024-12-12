@@ -1,27 +1,58 @@
-h1{
+h1 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 28pt;
 	color: blue;
 }
-h2{
+
+h2 {
 	color: white;
 }
-p{
+
+p {
 	font-family: "Century Gothic";
 	font-size: 11pt;
 }
-#caja1{
+
+#caja1 {
 	background-color: yellow;
+	display: grid;
 }
-#caja2{
+
+#caja2 {
+
 	background-color: pink;
+	display: flex;
+	/*flex dice como colocar las cajas*/
+	flex-direction: row;
+	gap: 10px;
 }
-#caja3{
+
+#caja3 {
 	background-color: green;
+	display: inline-block;
+	display: grid;
+	/*es cuadricula,rejilla,tabla...*/
+	grid-template-columns: repeat(2, 1fr);
+	/*sumo fracciones, son 4fr
+	 *     1 columna(1fr),2 columna(2fr)3columna(1fr)*/
+	grid-template-rows: repeat(1, 2fr);
+	column-gap: 10px;
+	row-gap: 10px;
+
 }
-.cajaNaranja{
+
+.cajaNaranja {
 	background-color: orange;
 }
-.cajaMorada{
+
+.cajaMorada {
 	background-color: blueviolet;
+	text-align: justify;
 }
+
+#cajaMoradaTabla {
+	background-color: blueviolet;
+	grid-column-start: 1;
+	grid-column-end: 3;
+
+}}
