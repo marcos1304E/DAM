@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h> // Para malloc, free, etc.
+#include <stdlib.h>// Para malloc, free, etc.
 
 int main() {
     int n = 5;
