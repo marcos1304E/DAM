@@ -1,0 +1,40 @@
+#cajaAzul{
+	background-color: blue;
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	padding: 10px;
+}
+.cajaCian{
+	background-color: darkturquoise;
+	grid-column: span 2;
+}
+.cajaAmarilla{
+	background-color: yellow;
+
+}
+.cajaVerde{
+	background-color: yellowgreen;
+	grid-column: span 2;
+	margin: 10px;
+}
+.cajaRosa{
+	background-color: rgb(255, 40, 183);
+
+}
+#cajaHijo1{
+	flex:1;
+	display:grid;
+	grid-template-columns:repeat(2,1fr);
+	grid-template-rows: repeat(3,1fr);
+	gap:10px;
+
+}
+#cajaHijo2{
+	flex:1;
+	display:grid;
+	grid-template-columns:repeat(2,1fr);
+	grid-template-rows: 2fr 2fr 1fr;
+	gap:10px;
+
+}
