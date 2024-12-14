@@ -16,12 +16,13 @@ int main(){
 	}
 
 
+
 	for (int i = 0; i < n; ++i)
 	{
 		scanf("%s", &arr[i]);
-		printf("arr[%d]: %c\n", i,arr[i]); 
+		printf("arr[%d]: %s\n", i,&arr[i]); 
 	}
 
-free(arr);
-return 0;
+	free(arr);
+	return 0;
 }
