@@ -1,8 +1,10 @@
 body {
     background-color: red;
-    margin: 20px;
+    margin-left:  20px;
+    margin-right: 10px;
+    /*top right bottom left*/
+    /*margin: 10px 10px 20px 20px;*/
 }
-
 #cajaVerde {
     background-color: greenyellow;
     height: 50vh;
@@ -11,23 +13,27 @@ body {
     padding: 20px;
     margin-right: 20px ;
     margin-bottom: 20px;
+    border: 5px solid rgb(0, 0, 0);
 }
 
 #cajaMorada {
     background-color: blueviolet;
     height: 50vh;
     width: 30vw;
-    float: left;
     padding: 20px;
+    float: left;
+    border: 5px solid rgb(0, 0, 0);
 
 
 }
 
 #cajaAmarilla {
+    float: left;
+    clear: both;
     background-color: yellow;
     height: 50vh;
-    float: left;
-    width: 100vw;
+    width: 95vw;
     padding: 20px;
+    border: 5px solid rgb(0, 0, 0);
 
 }

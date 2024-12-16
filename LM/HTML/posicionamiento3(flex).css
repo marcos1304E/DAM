@@ -1,0 +1,33 @@
+body{
+    background-color: red;
+}
+#padre{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*flex-flow: row wrap;*/
+    justify-content: space-between;
+    align-items: stretch;
+    
+}
+#cajaVerde{
+    background-color: green;
+    width: 50vw;
+    /*flex-basis: 50vw;*/
+    border: 5px solid black;
+}
+#cajaMorada{
+    background-color: blueviolet;
+    width: 30vw;
+    /*flex-basis: 30vw;*/
+    margin-left: 15vw;
+    border: 5px solid black;
+    align-self: center;
+    align-content: center;
+
+}
+#cajaAmarilla{
+    background-color: yellow;
+    width: 100vw;
+    border: 5px solid black;
+}
