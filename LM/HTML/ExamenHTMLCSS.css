@@ -14,13 +14,13 @@ h1{
 .hijito{
     background-color: rgb(78, 78, 255);
     margin-left: 70px;
-    margin-right: 460px;
+    margin-right: 60%;
    
 }
 #hijos2{
     background-color: rgb(78, 78, 255);
     margin-right: 70px;
-    margin-left: 460px ;
+    margin-left: 60%;
 }
 #cajaAmarilla{
     background-color: yellow;
@@ -54,4 +54,26 @@ h1{
     width: 40%;
     margin-left: 27px;
     margin-top: -65px;
+}
+.cajaHotpink{
+    background-color: hotpink;
+    margin-right: 60%;
+}
+.cajaCielo{
+    background-color: cyan;
+    margin-left: 40%;
+    
+}
+#parte3{
+    margin: 0;
+    padding: 0;
+}
+.cajaUltima{
+    background-color: blue;
+    margin-left: 85%;
+    height: 30vh;
+    padding: 10px;
+}
+#Hijos1{
+    gap: 10px;
 }
