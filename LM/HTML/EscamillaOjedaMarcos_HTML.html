@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamenHTML</title>
+    <link rel="stylesheet" href="ExamenMarcos.css">
+</head>
+
+<body>
+    <div id="cajaRosa">
+        <div class="cajaMorada1">
+            1
+        </div>
+        <div class="cajaMorada2">
+            1
+        </div>
+        <div class="cajaMorada3">
+            1
+        </div>
+
+    </div>
+    <div id="cajaNaranja">
+        <h1 style="text-align: center;">Formulario</h1>
+        <div class="formulario">
+            <form action="#">
+                <p>Cual es tu nombre <input type="text" name="nombre" placeholder="Ingresa tu nombre"></p>
+                <p>¿Qué generos de series prefieres?</p>
+                <p><input type="checkbox">Acción</p>
+                <p><input type="checkbox">Comedia</p>
+                <p>Cual de estas series has visto?</p>
+                <p><input type="radio" name="opcion1">Breaking Bad</p>
+                <p><input type="radio" name="opcion2">Stranger Things</p>
+                <p>¿Cuál es tu serie favorita? <select name="Serie" id="serie">
+                        <option value="Selecciona una serie">Selecciona una serie</option>
+                        <option value="Friends">Friends</option>
+                        <option value="The Mandalorian">The Mandalorian</option>
+                    </select>
+                    <input type="submit" value="Enviar"> <input type="reset" value="Resetear">
+                </p>
+                
+            </form>
+        </div>
+        <div id="cajaPartidas">
+            <div class="cajaAmarilla1">
+                A
+            </div>
+            <div class="cajaAmarilla1">
+                A
+            </div>
+            <div class="cajaPequeñaNaranja">
+                A
+            </div>
+        </div>
+    </div>
+
+    <div id="cajaVerde">
+        <h2>Lista de frutas</h2>
+        <p>1.Frutas  cítricas</p>
+        <ul>
+            <li>Naranja</li>
+            <li>Limón</li>
+            <li>Mandarina</li>
+
+        </ul>
+    </div>
+    <div id="cajaTurquesa">
+        <div class="tabla">
+        <table>
+            <tr>
+                <th rowspan="2">Encabezado 1</th>
+                <th colspan="2">Encabezado 2</th>
+                <th rowspan="3">Encabezado 3</th>
+            </tr>
+            <tr>
+                <th class="mediano">Subencabezado 1</th>
+                <th>Subencabezado 2</th>
+            <tr>
+                <th>Subencabezado 3</th>
+                <th class="mediano">Subencabezado 4</th>
+                <td></td>
+            </tr>
+                <td>Fila 1, Col 1</td>
+                <td>Fila 1, Celdas combinadas</td>
+                <td rowspan="2">Fila 1, Col4</td>
+                <td rowspan="4"></td>
+
+            </tr>
+            <tr>
+                <td>Fila 2, Col 1</td>
+                <td>Fila 2, Col 2</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Fila 3, Col 1(combinada)</td>
+                <td>Fila 3, Celdas combinadas(Col 2 y 3)</td>
+                <td>>Fila 3, Col 4</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Fila 4, Celdas combinadas(Col 2.3 y 4)
+                </td>
+            </tr>
+        </table>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
