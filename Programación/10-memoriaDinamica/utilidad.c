@@ -39,7 +39,11 @@ int main(){
 		printf("Error de realloc");
 		return EXIT_FAILURE;
 	}
-	arrPares = arrImpares;
+	for (int i = 0; i < n; ++i) {
+        printf("Introduce el valor para arr[%d]: ", i);
+        scanf("%d", &arr[i]);
+    }
+	arr
 
 	for (int i = n,valor = 1; i < 2*n; ++i,valor +=2)
 	{
