@@ -11,16 +11,24 @@ Autor: Marcos Escamilla Ojeda
 Desarrollo de Aplicaciones Multiplataforma
 Programación
 Practica 6 -- Gestión de biblioteca
+
 */ //mas comentarios
 
 
-
-// argumentos linea comandos
+//1 argumentos linea comandos
 //main(int argc, char **argv)
         //char ** argv[]
-    //./a.out mostrar 15
-/* argv[0] es un puntero
- * argv[0] -> a */
+    // ./a.out mostrar 15
+/* argv[0] es un puntero*/
+
+//2. memoria dinamica
+/*Inicializar libro (d, datos)
+donde d: es una direccion de memoria donde almacenar el libro y datos es id, "titulo","auto"...
+-> añadir libro al catalogo
+(utilice inicializa)
+La inicializacion del catálogo hay que cambiarla*/
+
+//3.prevencion de errores
 
 
 typedef enum{ //Enum para que se definan directamente, equivaldria a poner arriba varios defines con #define FICCION 0, por ejemplo, pero mucho más sencillo así y nos podemos entender para que abajo en el codigo si podamos poner la palabra literal FICCION, si no tendríamos que poner un 0.
@@ -45,7 +53,6 @@ typedef struct{
 
 
 
-
 //Ponemos const para que no se cambie, siempre el mismo sin modificar
 void printBook(const Libro * puntero_a_un_unico_libro){//Muestra info de libro al que se le apunte
         //Con todas las propiedades del libro, id titulo, autor, precio, genero y cantidad
@@ -59,20 +66,17 @@ void printBook(const Libro * puntero_a_un_unico_libro){//Muestra info de libro a
 }
 
 
-void libroPorId(const Libro * catalogo){
-    int id;
+void libroPorId(const Libro * catalogo, int id){
 
-        printf("Escribe el ID del libro: ");//Le pedimos al usuario que escriba el id con el que queremos que nos de la información de ese libro
-        scanf("%d", &id); 
-        for(int i=0; i <= id; i++){ //Bucle para que recorra todos los libros hasta el id que el usuario introduzca, y ahi imprimir el libro con la id que se ha introducido
+        for(int i=0; i <= CAT_MAX; i++){ //Bucle para que recorra todos los libros hasta el id que el usuario introduzca, y ahi imprimir el libro con la id que se ha introducido
             if(catalogo[i].id == id){ //Por eso hemos recorrido todo con el bucle for, y hemos llamado a la funcion printBook, en vez de hacer un printf para que imprima el libro completo, funcion que hemos hecho arriba, con todos los printf de todas las propiedades del libro.
             printBook(&catalogo[i]);
+            
             
 
         }
 }
 }
-
 
 
 void printAllBooks (const Libro * puntero_al_primer_libro_del_catalogo){
@@ -82,15 +86,12 @@ void printAllBooks (const Libro * puntero_al_primer_libro_del_catalogo){
 }
         
 
-void libroPorCategoria(const Libro * catalogo){ //Para buscar por la categoría                                               
-        int categoria;
-        printf("Escribe la categoría del libro: ");//Le pedimos al usuario que introduzca la categoría del libro, con sus numeros correspondientes
-        scanf("%d", &categoria);
+void libroPorCategoria(const Libro * catalogo, int categoria){ //Para buscar por la categoría                                               
+       
         printf("Libros de categoria %d\n", categoria); //Bucle que recorre todos los libros, y cuando encuentra un libro de la categoria que hemos puesto, imprime ese libro
         for(int i = 0; i < CAT_MAX; i++){
             if(catalogo[i].categoria == categoria){
                             //Cuando encuentra los libros de esa categoria, imprime los libros de esa categoría
-                printf("Libros de esa categoria:\n");
                 printBook(&catalogo[i]);
             }
 
@@ -100,18 +101,12 @@ void libroPorCategoria(const Libro * catalogo){ //Para buscar por la categoría
 }
 
 
-void IncrementarStock(Libro * stock_libro){ //Aqui no se podría poner const Libro porque se está modificando el libro, entonces me daría un warning
-    int cantidad,agregar_cant,id;
-    printf("¿Que libro quiere Incrementar?\n");//Preguntamos al usuario el libro que quiere incrementar, pidiendole el ID del libro, y lo almacenamos
-    scanf(" %d", &id);
+void IncrementarStock(Libro * stock_libro, int id, int cantidad){ //Aqui no se podría poner const Libro porque se está modificando el libro, entonces me daría un warning
 
         for(int i = 0; i < CAT_MAX; i++){//Bucle que recorre todos el catalogo hasta encontrar el libros que le hemos introducido
             if (/*id del libro i == id introducido por el scanf*/stock_libro[i].id == id){
-                printf("Libro encontrado: %s - %d unidades en stock.\n", stock_libro[i].titulo, stock_libro[i].cantidad);//Imprime que se ha encontrado y su cantidad en stock
 
-                printf("¿Que cantidad quiere añadir?\n");//Preguntamos la cantidad que se quiere añadir de ese libro, y la almacenamos
-                scanf(" %d", &agregar_cant);
-                stock_libro[i].cantidad += agregar_cant;//Para que se le sume a la cantidad de stock la cantidad agregada por el usuario
+                stock_libro[i].cantidad += cantidad;//Para que se le sume a la cantidad de stock la cantidad agregada por el usuario
                 printf("El libro ha sido actualizado, la nueva cantidad en stock es: %d\n", stock_libro[i].cantidad);//actualizamos stock
 
 
@@ -121,7 +116,8 @@ void IncrementarStock(Libro * stock_libro){ //Aqui no se podría poner const Lib
     }
 }
 
-int main(){ //int main(int argc, char ** argv){}...
+
+int main(int argc, char ** argv){ //int main(int argc, char ** argv){}...
             //argc: número de argumentos recibidos
             //argv: array de cadenas de texto
 
@@ -176,52 +172,48 @@ int main(){ //int main(int argc, char ** argv){}...
  
 
 
-
-        
-
-        printf("¿Qué opción desea realizar?\n1(Mostrar catalogo)\n2(Buscar por id)\n3(Incrementar stock)\n4(Buscar por categoría)\n");//Buscar por categoria, e incerementar cant de libro
-
-
-
-        printf("Opción: \n");
-        scanf("%d", &menu);
-
-//Un switch case a modo de menu para que segun la opcion que quiera el usuario, haga una cosa u otra, llamando a las funciones void que hemos hecho anteriormente
-
-        switch (menu){
-
-        case 1:
-        
-        printf("Catalogo completo:\n");
-            printAllBooks(libros);
-            break;
-
-    
-        case 2:
-
-            libroPorId(libros);
-            break;
-
-        case 3:
-
-            IncrementarStock(libros);
-            break;
-
-        case 4:
-
-            printf("Categorías: 0 = FICCION, 1 = NO_FICCION, 2 = POESIA, 3 = TEATRO, 4 = ENSAYO\n"); //Indicamos a usuario que cada categoria corresponde a un numero del enum, empezando por el 0.
-                libroPorCategoria(libros);
-                break;
-
-
-        default:
-                printf("Elección no válida\n");
-
-        break;
-
-        }
-    
-    
-
-    return 0;
+printf("Lista de argumentos (hay %d argumentos):\n",argc);
+    for(int i = 0; i<argc; i++){
+        printf("\t Argumento %d: %s\n",i,argv[i]);
     }
+
+
+
+if (argc == 1){
+    printf("Error, pon argumentos\n. ;)");
+    }
+
+else if (argc == 2){
+    if (strcmp(argv[1], "mostrar") == 0){
+        printAllBooks(libros);
+    } else if(strcmp(argv[1],"añadir")== 0){
+   
+        printf("Llamar a añadir el libro 41\n");
+    
+    }
+} else if (argc == 3){
+
+    if (strcmp(argv[1], "mostrar")== 0)
+    {
+        int id = atoi(argv[2]);
+        libroPorId(id,libros);
+    } else if (strcmp(argv[1], "autor")== 0)
+    {
+        printf("Llamar a buscar por autor\n");
+    }
+    else if (strcmp(argv[1], "categoria")== 0)
+    {
+        int categoria = atoi(argv[2]);
+        libroPorCategoria(libros,categoria);
+    }
+}else if (argc == 4){
+    int id = atoi(argv[2]);
+    int cantidad = atoi(argv[3]);
+    IncrementarStock(libros,id,cantidad);
+}
+
+
+return 0;
+}
+
+ 
