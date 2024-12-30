@@ -22,6 +22,7 @@ Estudiante estudiante_nuevo;
 
 // Inicializo el estudiante. e.edad = edad; e....
 
+
 return estudiante_nuevo;
 }*/
 
@@ -57,6 +58,9 @@ void cumpleanios(Estudiante * cumpleanero) {
 
 }
 
+
+
+// 
 
 /**
  * 27/11 - VAMOS A CREAR UNA FUNCIÓN PARA IMPRIMIR UN ESTUDIANTE. LO VAMOS A HACER DE 2 FORMAS 
