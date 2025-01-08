@@ -84,9 +84,8 @@ void printAllBooks (const Libro * puntero_al_primer_libro_del_catalogo){
 }
         
 
-void libroPorCategoria(const Libro * catalogo, int categoria){ //Para buscar por la categoría                                               
-       
-        printf("Libros de categoria %d\n", categoria); //Bucle que recorre todos los libros, y cuando encuentra un libro de la categoria que hemos puesto, imprime ese libro
+void FiltrarCategoria(Libro * BuscoCategoria){
+    printf("Libros de categoria %d\n", categoria); //Bucle que recorre todos los libros, y cuando encuentra un libro de la categoria que hemos puesto, imprime ese libro
         for(int i = 0; i < CAT_MAX; i++){
             if(catalogo[i].categoria == categoria){
                             //Cuando encuentra los libros de esa categoria, imprime los libros de esa categoría
@@ -94,10 +93,13 @@ void libroPorCategoria(const Libro * catalogo, int categoria){ //Para buscar por
             }
 
         }
-
-
 }
 
+void libroPorCategoria(const Libro * catalogo){ //Para buscar por la categoría                                               
+       
+  FiltrarCategoria(catalogo);
+
+}
 
 void IncrementarStock(Libro * stock_libro, int id, int cantidad){ //Aqui no se podría poner const Libro porque se está modificando el libro, entonces me daría un warning
 
@@ -106,7 +108,6 @@ void IncrementarStock(Libro * stock_libro, int id, int cantidad){ //Aqui no se p
 
                 stock_libro[i].cantidad += cantidad;//Para que se le sume a la cantidad de stock la cantidad agregada por el usuario
                 printf("El libro ha sido actualizado, la nueva cantidad en stock es: %d\n", stock_libro[i].cantidad);//actualizamos stock
-
 
 
             }
@@ -166,7 +167,6 @@ int main(int argc, char ** argv){ //int main(int argc, char ** argv){}...
         printBook(&libros[37],38, "The Communist Manifesto", "Karl Marx and Friedrich Engels", 5.99, ENSAYO, 12);
         printBook(&libros[38],39, "The Republic", "Plato", 16.00, ENSAYO, 6);
         printBook(&libros[39],40, "Thus Spoke Zarathustra", "Friedrich Nietzsche", 14.99, ENSAYO, 10);    
-    
 
 
 /*
