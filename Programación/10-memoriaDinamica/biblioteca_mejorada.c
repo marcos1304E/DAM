@@ -4,7 +4,7 @@
 
 #define TITULO_MAX 60
 #define AUTOR_MAX 50
-#define CAT_MAX 40
+int CAT_MAX =40;
 
 /*
 Autor: Marcos Escamilla Ojeda
@@ -54,7 +54,7 @@ typedef struct{
 
 
 //Ponemos const para que no se cambie, siempre el mismo sin modificar
-void inicializarBook(Libro * dir, int id,char *titulo, char* autor,float precio, int categoria, int cantidad){//Muestra info de libro al que se le apunte
+void inicializarLibro(Libro * dir, int id,char *titulo, char* autor,float precio, int categoria, int cantidad){//Muestra info de libro al que se le apunte
         //Con todas las propiedades del libro, id titulo, autor, precio, genero y cantidad
         dir -> id = id;
         dir ->precio = precio;
@@ -66,6 +66,25 @@ void inicializarBook(Libro * dir, int id,char *titulo, char* autor,float precio,
 
 }
 
+void AñadirLibro(Libro * catalogo){
+CAT_MAX++;
+Libro libro_nuevo;
+printf("Datos del nuevo libro:\n");
+printf("Id:");
+scanf(" %d",&libro_nuevo.id);
+printf("Titulo:");
+scanf(" %s", libro_nuevo.titulo);
+printf("Autor:");
+scanf(" %s", libro_nuevo.autor);
+printf("Precio:");
+scanf(" %f", &libro_nuevo.precio);
+printf("Categoria:");
+scanf("%d", &libro_nuevo.categoria);
+printf("Cantidad:");
+scanf(" %d", &libro_nuevo.cantidad);
+inicializarLibro(&catalogo[CAT_MAX-1],libro_nuevo.id,libro_nuevo.titulo,libro_nuevo.autor,libro_nuevo.precio,libro_nuevo.categoria);
+
+}
 
 //Ponemos const para que no se cambie, siempre el mismo sin modificar
 void printBook(const Libro * puntero_a_un_unico_libro){//Muestra info de libro al que se le apunte
@@ -137,46 +156,46 @@ int main(int argc, char ** argv){ //int main(int argc, char ** argv){}...
 
         Libro * libros = (Libro*) malloc(cantidad * sizeof(Libro));
 
-        inicializarBook(&libros[0],1, "To Kill a Mockingbird", "Harper Lee", 15.99,FICCION, 10);
-        inicializarBook(&libros[1],2, "1984", "George Orwell", 12.49,FICCION, 5);
-        inicializarBook(&libros[2],3, "The Great Gatsby", "F. Scott Fitzgerald", 10.99,FICCION, 8);
-        inicializarBook(&libros[3],4, "Moby Dick", "Herman Melville", 18.99,FICCION, 12);
-        inicializarBook(&libros[4],5, "War and Peace", "Leo Tolstoy", 20.00,FICCION, 7);
-        inicializarBook(&libros[5],6, "Pride and Prejudice", "Jane Austen", 14.99,FICCION, 9);
-        inicializarBook(&libros[6],7, "The Catcher in the Rye", "J.D. Salinger", 10.00,FICCION, 6);
-        inicializarBook(&libros[7],8, "The Odyssey", "Homer", 17.49,FICCION, 4);
-        inicializarBook(&libros[8],9, "Ulysses", "James Joyce", 25.00,FICCION, 2);
-        inicializarBook(&libros[9],10, "The Divine Comedy", "Dante Alighieri", 22.00, POESIA, 3);
-        inicializarBook(&libros[10],11, "Leaves of Grass", "Walt Whitman", 13.00, POESIA, 11);
-        inicializarBook(&libros[11],12, "The Iliad", "Homer", 18.50,FICCION, 7);
-        inicializarBook(&libros[12],13, "A Brief History of Time", "Stephen Hawking", 15.00, NO_FICCION, 15);
-        inicializarBook(&libros[13],14, "The Art of War", "Sun Tzu", 9.99, NO_FICCION, 20);
-        inicializarBook(&libros[14],15, "Sapiens: A Brief History of Humankind", "Yuval Noah Harari", 16.49, NO_FICCION, 13);
-        inicializarBook(&libros[15],16, "The Selfish Gene", "Richard Dawkins", 14.00, NO_FICCION, 6);
-        inicializarBook(&libros[16],17, "The Road to Serfdom", "F.A. Hayek", 10.50, NO_FICCION, 5);
-        inicializarBook(&libros[17],18, "The Wealth of Nations", "Adam Smith", 30.00, NO_FICCION, 8);
-        inicializarBook(&libros[18],19, "On the Origin of Species", "Charles Darwin", 24.99, NO_FICCION, 4);
-        inicializarBook(&libros[19],20, "The Prince", "Niccolò Machiavelli", 8.99, NO_FICCION, 14);
-        inicializarBook(&libros[20],21, "Hamlet", "William Shakespeare", 11.50, TEATRO, 6);
-        inicializarBook(&libros[21],22, "Macbeth", "William Shakespeare", 9.50, TEATRO, 8);
-        inicializarBook(&libros[22],23, "Othello", "William Shakespeare", 10.99, TEATRO, 7);
-        inicializarBook(&libros[23],24, "A Doll's House", "Henrik Ibsen", 12.50, TEATRO, 5);
-        inicializarBook(&libros[24],25, "Waiting for Godot", "Samuel Beckett", 13.99, TEATRO, 4);
-        inicializarBook(&libros[25],26, "Death of a Salesman", "Arthur Miller", 14.99, TEATRO, 10);
-        inicializarBook(&libros[26],27, "The Glass Menagerie", "Tennessee Williams", 11.00, TEATRO, 9);
-        inicializarBook(&libros[27],28, "Long Day's Journey into Night", "Eugene O'Neill", 19.50, TEATRO, 3);
-        inicializarBook(&libros[28],29, "The Importance of Being Earnest", "Oscar Wilde", 8.50, TEATRO, 15);
-        inicializarBook(&libros[29],30, "The Waste Land", "T.S. Eliot", 6.99, POESIA, 10);
-        inicializarBook(&libros[30],31, "Paradise Lost", "John Milton", 12.00, POESIA, 7);
-        inicializarBook(&libros[31],32, "Beowulf", "Anonymous", 15.00, POESIA, 5);
-        inicializarBook(&libros[32],33, "Essays", "Michel de Montaigne", 20.00, ENSAYO, 4);
-        inicializarBook(&libros[33],34, "Self-Reliance and Other Essays", "Ralph Waldo Emerson", 9.00, ENSAYO, 9);
-        inicializarBook(&libros[34],35, "Civil Disobedience and Other Essays", "Henry David Thoreau", 7.50, ENSAYO, 11);
-        inicializarBook(&libros[35],36, "Meditations", "Marcus Aurelius", 11.99, ENSAYO, 8);
-        inicializarBook(&libros[36],37, "The Federalist Papers", "Alexander Hamilton, James Madison, John Jay", 18.00, ENSAYO, 5);
-        inicializarBook(&libros[37],38, "The Communist Manifesto", "Karl Marx and Friedrich Engels", 5.99, ENSAYO, 12);
-        inicializarBook(&libros[38],39, "The Republic", "Plato", 16.00, ENSAYO, 6);
-        inicializarBook(&libros[39],40, "Thus Spoke Zarathustra", "Friedrich Nietzsche", 14.99, ENSAYO, 10);    
+        inicializarLibro(&libros[0],1, "To Kill a Mockingbird", "Harper Lee", 15.99,FICCION, 10);
+        inicializarLibro(&libros[1],2, "1984", "George Orwell", 12.49,FICCION, 5);
+        inicializarLibro(&libros[2],3, "The Great Gatsby", "F. Scott Fitzgerald", 10.99,FICCION, 8);
+        inicializarLibro(&libros[3],4, "Moby Dick", "Herman Melville", 18.99,FICCION, 12);
+        inicializarLibro(&libros[4],5, "War and Peace", "Leo Tolstoy", 20.00,FICCION, 7);
+        inicializarLibro(&libros[5],6, "Pride and Prejudice", "Jane Austen", 14.99,FICCION, 9);
+        inicializarLibro(&libros[6],7, "The Catcher in the Rye", "J.D. Salinger", 10.00,FICCION, 6);
+        inicializarLibro(&libros[7],8, "The Odyssey", "Homer", 17.49,FICCION, 4);
+        inicializarLibro(&libros[8],9, "Ulysses", "James Joyce", 25.00,FICCION, 2);
+        inicializarLibro(&libros[9],10, "The Divine Comedy", "Dante Alighieri", 22.00, POESIA, 3);
+        inicializarLibro(&libros[10],11, "Leaves of Grass", "Walt Whitman", 13.00, POESIA, 11);
+        inicializarLibro(&libros[11],12, "The Iliad", "Homer", 18.50,FICCION, 7);
+        inicializarLibro(&libros[12],13, "A Brief History of Time", "Stephen Hawking", 15.00, NO_FICCION, 15);
+        inicializarLibro(&libros[13],14, "The Art of War", "Sun Tzu", 9.99, NO_FICCION, 20);
+        inicializarLibro(&libros[14],15, "Sapiens: A Brief History of Humankind", "Yuval Noah Harari", 16.49, NO_FICCION, 13);
+        inicializarLibro(&libros[15],16, "The Selfish Gene", "Richard Dawkins", 14.00, NO_FICCION, 6);
+        inicializarLibro(&libros[16],17, "The Road to Serfdom", "F.A. Hayek", 10.50, NO_FICCION, 5);
+        inicializarLibro(&libros[17],18, "The Wealth of Nations", "Adam Smith", 30.00, NO_FICCION, 8);
+        inicializarLibro(&libros[18],19, "On the Origin of Species", "Charles Darwin", 24.99, NO_FICCION, 4);
+        inicializarLibro(&libros[19],20, "The Prince", "Niccolò Machiavelli", 8.99, NO_FICCION, 14);
+        inicializarLibro(&libros[20],21, "Hamlet", "William Shakespeare", 11.50, TEATRO, 6);
+        inicializarLibro(&libros[21],22, "Macbeth", "William Shakespeare", 9.50, TEATRO, 8);
+        inicializarLibro(&libros[22],23, "Othello", "William Shakespeare", 10.99, TEATRO, 7);
+        inicializarLibro(&libros[23],24, "A Doll's House", "Henrik Ibsen", 12.50, TEATRO, 5);
+        inicializarLibro(&libros[24],25, "Waiting for Godot", "Samuel Beckett", 13.99, TEATRO, 4);
+        inicializarLibro(&libros[25],26, "Death of a Salesman", "Arthur Miller", 14.99, TEATRO, 10);
+        inicializarLibro(&libros[26],27, "The Glass Menagerie", "Tennessee Williams", 11.00, TEATRO, 9);
+        inicializarLibro(&libros[27],28, "Long Day's Journey into Night", "Eugene O'Neill", 19.50, TEATRO, 3);
+        inicializarLibro(&libros[28],29, "The Importance of Being Earnest", "Oscar Wilde", 8.50, TEATRO, 15);
+        inicializarLibro(&libros[29],30, "The Waste Land", "T.S. Eliot", 6.99, POESIA, 10);
+        inicializarLibro(&libros[30],31, "Paradise Lost", "John Milton", 12.00, POESIA, 7);
+        inicializarLibro(&libros[31],32, "Beowulf", "Anonymous", 15.00, POESIA, 5);
+        inicializarLibro(&libros[32],33, "Essays", "Michel de Montaigne", 20.00, ENSAYO, 4);
+        inicializarLibro(&libros[33],34, "Self-Reliance and Other Essays", "Ralph Waldo Emerson", 9.00, ENSAYO, 9);
+        inicializarLibro(&libros[34],35, "Civil Disobedience and Other Essays", "Henry David Thoreau", 7.50, ENSAYO, 11);
+        inicializarLibro(&libros[35],36, "Meditations", "Marcus Aurelius", 11.99, ENSAYO, 8);
+        inicializarLibro(&libros[36],37, "The Federalist Papers", "Alexander Hamilton, James Madison, John Jay", 18.00, ENSAYO, 5);
+        inicializarLibro(&libros[37],38, "The Communist Manifesto", "Karl Marx and Friedrich Engels", 5.99, ENSAYO, 12);
+        inicializarLibro(&libros[38],39, "The Republic", "Plato", 16.00, ENSAYO, 6);
+        inicializarLibro(&libros[39],40, "Thus Spoke Zarathustra", "Friedrich Nietzsche", 14.99, ENSAYO, 10);    
 
 
 /*
@@ -211,7 +230,9 @@ else if (argc == 2){
         printAllBooks(libros);
     } else if(strcmp(argv[1],"añadir")== 0){
    
-        printf("Llamar a añadir el libro 41\n");
+        AñadirLibro(libros);
+        printAllBooks(libros);
+        //printf("Llamar a añadir el libro 41\n");
     
     }
 } else if (argc == 3){
