@@ -67,8 +67,15 @@ void inicializarLibro(Libro * dir, int id,char *titulo, char* autor,float precio
 }
 
 void AñadirLibro(Libro * catalogo){
-CAT_MAX++;
-Libro libro_nuevo;
+    int num_nuevos;
+    printf("¿Cuántos libros quieres añadir?");
+    scanf("%d", &num_nuevos);
+
+
+Libro libro_nuevo; //declaramos variable libro_nuevo de tipo Libro, para almacenar datos de cada nuevo libro que se añad
+for (int i = 0; i < num_nuevos; ++i)
+{
+
 printf("Datos del nuevo libro:\n");
 printf("Id:");
 scanf(" %d",&libro_nuevo.id);
@@ -82,9 +89,12 @@ printf("Categoria:");
 scanf("%d", &libro_nuevo.categoria);
 printf("Cantidad:");
 scanf(" %d", &libro_nuevo.cantidad);
-inicializarLibro(&catalogo[CAT_MAX-1],libro_nuevo.id,libro_nuevo.titulo,libro_nuevo.autor,libro_nuevo.precio,libro_nuevo.categoria);
+inicializarLibro(&catalogo[CAT_MAX],libro_nuevo.id,libro_nuevo.titulo,libro_nuevo.autor,libro_nuevo.precio,libro_nuevo.categoria,libro_nuevo.cantidad);
+CAT_MAX++;
 
 }
+}
+
 
 //Ponemos const para que no se cambie, siempre el mismo sin modificar
 void printBook(const Libro * puntero_a_un_unico_libro){//Muestra info de libro al que se le apunte
@@ -128,6 +138,17 @@ void libroPorCategoria(Libro * catalogo, int categoria){ //Para buscar por la ca
 
         }
 
+}
+
+void libroPorAutor(Libro * catalogo, char *autor){
+    printf("Libros del autor %s:\n", autor);
+    for (int i = 0; i < CAT_MAX; ++i)
+    {
+        if (catalogo[i].autor == autor)
+        {
+            printBook(&catalogo[i]);
+        }
+    }
 }
 
 void IncrementarStock(Libro * stock_libro, int id, int cantidad){ //Aqui no se podría poner const Libro porque se está modificando el libro, entonces me daría un warning
@@ -243,7 +264,9 @@ else if (argc == 2){
         libroPorId(libros,id);
     } else if (strcmp(argv[1], "autor")== 0)
     {
-        printf("Llamar a buscar por autor\n");
+        int autor;
+        libroPorAutor(libros,autor);
+        //printf("Llamar a buscar por autor\n");
     }
     else if (strcmp(argv[1], "categoria")== 0)
     {
