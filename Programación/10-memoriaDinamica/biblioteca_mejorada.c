@@ -4,7 +4,7 @@
 
 #define TITULO_MAX 60
 #define AUTOR_MAX 50
-int CAT_MAX =40;
+int CAT_MAX = 40, total_libros;
 
 /*
 Autor: Marcos Escamilla Ojeda
@@ -63,22 +63,25 @@ void inicializarLibro(Libro * dir, int id,char *titulo, char* autor,float precio
         strcpy(dir-> titulo, titulo);
         dir -> cantidad = cantidad;
 
+        total_libros++;
+
 
 }
 
-void AñadirLibro(Libro * catalogo){
+void AñadirLibro(Libro * catalogo, int *total_libros){
     int num_nuevos;
-    printf("¿Cuántos libros quieres añadir?");
+    printf("¿Cuántos libros quieres añadir?\n");
     scanf("%d", &num_nuevos);
-
 
 Libro libro_nuevo; //declaramos variable libro_nuevo de tipo Libro, para almacenar datos de cada nuevo libro que se añad
 for (int i = 0; i < num_nuevos; ++i)
 {
 
 printf("Datos del nuevo libro:\n");
-printf("Id:");
-scanf(" %d",&libro_nuevo.id);
+printf("Id: %d",*total_libros);
+// Escribirt en libro_nuevo.id
+libro_nuevo.id = *total_libros+1;
+//scanf(" %d",&libro_nuevo.id);
 printf("Titulo:");
 scanf(" %s", libro_nuevo.titulo);
 printf("Autor:");
@@ -144,7 +147,7 @@ void libroPorAutor(Libro * catalogo, char *autor){
     printf("Libros del autor %s:\n", autor);
     for (int i = 0; i < CAT_MAX; ++i)
     {
-        if (catalogo[i].autor == autor)
+        if (strncmp(catalogo[i].autor,catalogo[i].autor,strlen(catalogo[i].autor)) == 0)
         {
             printBook(&catalogo[i]);
         }
@@ -171,6 +174,7 @@ int main(int argc, char ** argv){ //int main(int argc, char ** argv){}...
             //argv: array de cadenas de texto
 
         int numero_libros, id, menu,cantidad;
+
 
         /*char palabra[10] = "Hola";
         printf("%c\n",*(palabra+1));*/
@@ -251,7 +255,7 @@ else if (argc == 2){
         printAllBooks(libros);
     } else if(strcmp(argv[1],"añadir")== 0){
    
-        AñadirLibro(libros);
+        AñadirLibro(libros,&total_libros);
         printAllBooks(libros);
         //printf("Llamar a añadir el libro 41\n");
     
@@ -265,7 +269,7 @@ else if (argc == 2){
     } else if (strcmp(argv[1], "autor")== 0)
     {
         int autor;
-        libroPorAutor(libros,autor);
+      libroPorAutor(libros,autor);
         //printf("Llamar a buscar por autor\n");
     }
     else if (strcmp(argv[1], "categoria")== 0)
