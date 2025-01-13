@@ -143,14 +143,19 @@ void libroPorCategoria(Libro * catalogo, int categoria){ //Para buscar por la ca
 
 }
 
-void libroPorAutor(Libro * catalogo, char *autor){
-    printf("Libros del autor %s:\n", autor);
+void libroPorAutor(Libro * catalogo, char autor_a_buscar[100]){
+   
     for (int i = 0; i < CAT_MAX; ++i)
     {
-        if (strncmp(catalogo[i].autor,catalogo[i].autor,strlen(catalogo[i].autor)) == 0)
+        for (int j = 0; catalogo[i].autor < '\0'; ++j)
+        {
+           
+        
+        if (strncmp(catalogo[i].autor,autor_a_buscar,strlen(autor_a_buscar)) == 0)
         {
             printBook(&catalogo[i]);
         }
+    }
     }
 }
 
@@ -268,8 +273,8 @@ else if (argc == 2){
         libroPorId(libros,id);
     } else if (strcmp(argv[1], "autor")== 0)
     {
-        int autor;
-      libroPorAutor(libros,autor);
+        char autor_a_buscar;
+      libroPorAutor(libros,*autor_a_buscar);
         //printf("Llamar a buscar por autor\n");
     }
     else if (strcmp(argv[1], "categoria")== 0)
