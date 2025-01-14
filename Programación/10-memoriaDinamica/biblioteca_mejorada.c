@@ -4,7 +4,8 @@
 
 #define TITULO_MAX 60 //Longitud maxima del titulo del libro
 #define AUTOR_MAX 50 //Longitud maxima del autor del libro
-int CAT_MAX = 40, total_libros; //CAT_MAX es el numero maximo de libros en el catalogo, y total_libros llevara la cuenta de los libros añadidos
+int CAT_MAX = 40;
+int total_libros; //CAT_MAX es el numero maximo de libros en el catalogo, y total_libros llevara la cuenta de los libros añadidos
 
 /*
 Autor: Marcos Escamilla Ojeda
@@ -85,11 +86,11 @@ printf("Datos del nuevo libro:\n");
 printf("Id: %d",*total_libros);
 // Escribirt en libro_nuevo.id
 libro_nuevo.id = *total_libros+1; //aqui asignamos un ID unico al nuevo libro
-//scanf(" %d",&libro_nuevo.id);
+scanf(" %d",&libro_nuevo.id);
 printf("Titulo:");
-scanf(" %s", libro_nuevo.titulo);
+scanf("%s", libro_nuevo.titulo);
 printf("Autor:");
-scanf(" %s", libro_nuevo.autor);
+scanf("%s", libro_nuevo.autor);
 printf("Precio:");
 scanf(" %f", &libro_nuevo.precio);
 printf("Categoria:");
@@ -107,7 +108,7 @@ CAT_MAX++; // Aumentamos el tamaño del catálogo.
 // Esta función muestra por pantalla toda la información de un libro específico. 
 // Recibe un puntero a un libro y usa printf para imprimir sus datos.
 //Ponemos const para que no se cambie, siempre el mismo sin modificar
-void printBook(const Libro * puntero_a_un_unico_libro){//Muestra info de libro al que se le apunte
+void imprimirLibro(const Libro * puntero_a_un_unico_libro){//Muestra info de libro al que se le apunte
         //Con todas las propiedades del libro, id titulo, autor, precio, genero y cantidad
         printf("Id: %d\n",puntero_a_un_unico_libro->id);
         printf("Titulo: %s\n",puntero_a_un_unico_libro->titulo);
@@ -119,30 +120,30 @@ void printBook(const Libro * puntero_a_un_unico_libro){//Muestra info de libro a
 }
 // La función "libroPorId" busca un libro en el catálogo según el ID que introduzca el usuario. 
 // Usa un bucle para recorrer el catálogo completo y cuando encuentra el libro con el ID deseado, 
-// llama a la función printBook para mostrar sus datos.
+// llama a la función imprimirLibro para mostrar sus datos.
 void libroPorId(const Libro * catalogo, int id){
 
         for(int i=0; i <= CAT_MAX; i++){ //Bucle para que recorra todos los libros hasta el id que el usuario introduzca, y ahi imprimir el libro con la id que se ha introducido
-            if(catalogo[i].id == id){ //Por eso hemos recorrido todo con el bucle for, y hemos llamado a la funcion printBook, en vez de hacer un printf para que imprima el libro completo, funcion que hemos hecho arriba, con todos los printf de todas las propiedades del libro.
+            if(catalogo[i].id == id){ //Por eso hemos recorrido todo con el bucle for, y hemos llamado a la funcion imprimirLibro, en vez de hacer un printf para que imprima el libro completo, funcion que hemos hecho arriba, con todos los printf de todas las propiedades del libro.
                 //comparamos el id de cada libro con el id introducido
-            printBook(&catalogo[i]); //si coincide, mostramos los datos de ese libro
+            imprimirLibro(&catalogo[i]); //si coincide, mostramos los datos de ese libro
                        
 
         }
 }
 }
 
-// Esta función recorre todo el catálogo y muestra la información de todos los libros usando printBook.Usa un bucle para recorrer el catálogo y llama a printBook para cada libro.
+// Esta función recorre todo el catálogo y muestra la información de todos los libros usando imprimirLibro.Usa un bucle para recorrer el catálogo y llama a imprimirLibro para cada libro.
 
-void printAllBooks (const Libro * puntero_al_primer_libro_del_catalogo){
+void imprimirTodosLosLibros (const Libro * puntero_al_primer_libro_del_catalogo){
         for(int i = 0;i < CAT_MAX; i++){
-                printBook(puntero_al_primer_libro_del_catalogo+i);//ponemos un +i para que vaya sumando cada vez, una vez i, y que vaya imprimiendo cada vez el libro siguiente
+                imprimirLibro(puntero_al_primer_libro_del_catalogo+i);//ponemos un +i para que vaya sumando cada vez, una vez i, y que vaya imprimiendo cada vez el libro siguiente
         }                                                         //Para no tener que ir repitiendo todo el rato todos los libros lo hacemos en un bucle
 }
         
 /*
 Esta función busca y muestra los libros de una categoría específica.
-Recorre el catálogo y llama a printBook para cada libro que coincida con la categoría proporcionada.
+Recorre el catálogo y llama a imprimirLibro para cada libro que coincida con la categoría proporcionada.
 */
 void libroPorCategoria(Libro * catalogo, int categoria){ //Para buscar por la categoría 
 
@@ -150,7 +151,7 @@ void libroPorCategoria(Libro * catalogo, int categoria){ //Para buscar por la ca
         for(int i = 0; i < CAT_MAX; i++){
             if(catalogo[i].categoria == categoria){
                             //Cuando encuentra los libros de esa categoria, imprime los libros de esa categoría
-                printBook(&catalogo[i]);
+                imprimirLibro(&catalogo[i]);
             }
 
         }
@@ -160,23 +161,25 @@ void libroPorCategoria(Libro * catalogo, int categoria){ //Para buscar por la ca
 Esta función busca libros por autor.
 Compara el nombre del autor de cada libro con el autor buscado.
 */
-void libroPorAutor(Libro * catalogo, char autor_a_buscar[100]){
-   
-    for (int i = 0; i < CAT_MAX; ++i)
-    {
-        for (int j = 0; catalogo[i].autor[j]  !='\0'; ++j)
-        {
-           
-        if (strncmp(catalogo[i].autor,autor_a_buscar,strlen(autor_a_buscar)) == 0){
-            
-            printBook(&catalogo[i]);
-            break;
-        }else{
-            continue;
+void libroPorAutor(Libro * catalogo, char *autor_a_buscar){
+    
+    int libro_encontrado = 0;  // definimos variable para indicar si se encuentra o no el libro
+    
+    for (int i = 0; i < CAT_MAX; ++i) {//recorremos todo el catalogo con un bucle for
+
+        if (strstr(catalogo[i].autor, autor_a_buscar) != NULL) {//aqui usamos strstr para buscar si el nombre del autor que se ingrese aparece en el campo autor de cada libro, entonces si encuentra alguna coincidencia si que llama a imprimirLibro, para ahi ya mostrar toda la informacion del libro, y cambiamos a 1 el indicadore de que si se ha encontrado algun autor con las coincidencias
+            //Asi por ejemplo, poniendo solo el apellido del autor tambien funcionaría
+            imprimirLibro(&catalogo[i]);  
+            libro_encontrado = 1;
         }
     }
-    }
+    
+    if (!libro_encontrado) {
+        printf("No se ha encontrado ningún libro del autor: %s\n", autor_a_buscar);
+    }//Mensaje para saber, si sigue siendo 0 el indicador, significa que no hay libros de ese autor y entonces imprimimos un mensaje diciendo que no se ha encontrado ningun resulyado
 }
+
+
 /*
 Esta función incrementa la cantidad en stock de un libro específico.
 Busca el libro por su ID y aumenta su cantidad según lo especificado.
@@ -279,11 +282,11 @@ else if (argc == 2){
     // Si se pasa un argumento, se verifica si es 'mostrar' o 'añadir'.
     if (strcmp(argv[1], "mostrar") == 0){
         // Si el argumento es 'mostrar', se imprime la lista completa de libros.
-        printAllBooks(libros);
+        imprimirTodosLosLibros(libros);
     } else if(strcmp(argv[1],"añadir")== 0){
    // Si el argumento es 'añadir', se llama a la función para añadir un nuevo libro.
         AñadirLibro(libros,&total_libros);
-        printAllBooks(libros);
+        imprimirTodosLosLibros(libros);
         // Luego se imprime la lista completa de libros para confirmar el cambio.
     
     }
@@ -298,7 +301,7 @@ else if (argc == 2){
     } else if (strcmp(argv[1], "autor")== 0)
     {
         char *autor_a_buscar = argv[2];
-      libroPorAutor(libros,autor_a_buscar);
+      libroPorAutor(libros,argv[2]);
 
       // Si el comando es 'autor', se busca y muestra el libro del autor solicitado.
 
