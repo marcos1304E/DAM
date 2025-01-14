@@ -164,13 +164,15 @@ void libroPorAutor(Libro * catalogo, char autor_a_buscar[100]){
    
     for (int i = 0; i < CAT_MAX; ++i)
     {
-        for (int j = 0; catalogo[i].autor < '\0'; ++j)
+        for (int j = 0; catalogo[i].autor[j]  !='\0'; ++j)
         {
            
-        
-        if (strncmp(catalogo[i].autor,autor_a_buscar,strlen(autor_a_buscar)) == 0)
-        {
+        if (strncmp(catalogo[i].autor,autor_a_buscar,strlen(autor_a_buscar)) == 0){
+            
             printBook(&catalogo[i]);
+            break;
+        }else{
+            continue;
         }
     }
     }
@@ -199,7 +201,7 @@ int main(int argc, char ** argv){ //int main(int argc, char ** argv){}...
             //argc: número de argumentos recibidos
             //argv: array de cadenas de texto
 
-        int numero_libros, id,cantidad;
+        int numero_libros, id,cantidad, autor_a_buscar;
 // Declaración de variables enteras:
     // numero_libros: almacenará el número de libros en el catálogo.
     // id: identificador de un libro.
@@ -295,11 +297,12 @@ else if (argc == 2){
         // Llama a la función que muestra el libro con el ID especificado.
     } else if (strcmp(argv[1], "autor")== 0)
     {
-        char autor_a_buscar;
-      libroPorAutor(libros,*autor_a_buscar);
+        char *autor_a_buscar = argv[2];
+      libroPorAutor(libros,autor_a_buscar);
+
       // Si el comando es 'autor', se busca y muestra el libro del autor solicitado.
 
-        //printf("Llamar a buscar por autor\n");
+
     }
     else if (strcmp(argv[1], "categoria")== 0)
     {
@@ -323,7 +326,7 @@ else if (argc == 2){
 
 
 return 0;
-    // Devuelve 0 para indicar que el programa finalizó correctamente.
+    // Devuelve 0 para indicar que el programa ha finalizado correctamente.
 
 }
 
