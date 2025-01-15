@@ -327,7 +327,8 @@ Esta función busca y muestra los libros de una categoría específica.
 Recorre el catálogo y llama a imprimirLibro para cada libro que coincida con la categoría proporcionada.
 */
 void libroPorCategoria(Libro * catalogo, int categoria){ //Para buscar por la categoría 
-
+    /*vale tanto poner 0(ficcion), 1(no ficcion)...
+    hasta tambien poner el genero en la propia palabra: "ficcion"...*/
     printf("Libros de categoria %d\n", categoria); //Bucle que recorre todos los libros, y cuando encuentra un libro de la categoria que hemos puesto, imprime ese libro
         for(int i = 0; i < CAT_MAX; i++){
             if(catalogo[i].categoria == categoria){
