@@ -11,9 +11,7 @@ int CAT_MAX = 40;
 Autor: Marcos Escamilla Ojeda
 Desarrollo de Aplicaciones Multiplataforma
 Programación
-Practica 6 -- Gestión de biblioteca
-
-*/ //mas comentarios
+Practica 6 -- Gestión de biblioteca mejorada
 
 
 //1 argumentos linea comandos
