@@ -21,6 +21,10 @@ int main(){
 
 
 
+//uno para leer y otro para modificar,
+	//cuando paso dir de memoria es para modificar//por referencia
+	//el paso por valor es para leer
+	//cuando llamamos a una funcion, crea variables nuevas, que guardamos (valor o dir de memoria)
 
 
 
