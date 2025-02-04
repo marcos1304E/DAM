@@ -158,13 +158,6 @@ int main() {
 
 
 
-
-
-
-
-
-
-
 /*Escriba un programa en C que realice las siguientes acciones:
 
 1. Solicite un número entero positivo que representará el tamaño de un array de caracteres (una palabra).
