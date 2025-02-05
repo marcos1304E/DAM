@@ -7,7 +7,6 @@ int main() {
     // Pedir tamaño del array
     printf("Ingrese el número de elementos: ");
     scanf("%d", &n);
-    
     // Reservar memoria para el array
     int *array = (int *)malloc(n * sizeof(int));
     if (array == NULL) {
