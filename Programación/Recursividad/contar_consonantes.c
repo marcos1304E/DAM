@@ -24,8 +24,6 @@ int contar_consonantes(char *palabra, int i, int total_consonantes/*Se ponen tod
 
 }
 
-
-
 void contar_consonantes_2(char *palabra, int i, int * total_consonantes/*Se ponen todas las variables aquí*/){
 	
 	// BASE:
@@ -42,7 +40,6 @@ void contar_consonantes_2(char *palabra, int i, int * total_consonantes/*Se pone
 	contar_consonantes_2(palabra,i+1,total_consonantes);
 
 }
-
 
 
 int main(){
