@@ -1,8 +1,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int busquedaBinaria(int * array, int a_buscar, int ini, int fin);//int ini e int fin son las posiciones del array, y van cambiando.
+int busquedaBinaria(int * array, int a_buscar, int ini, int fin){;//int ini e int fin son las posiciones del array, y van cambiando.
+	mitad = (ini + fin)/2;
+	if (array [mitad] == a_buscar)
+	{
+		return mitad;	
+	}
+	if (ini > mitad)
+	{
+		return -1;
+	}
 
+}
 
 
 int main(){
@@ -15,7 +25,7 @@ int main(){
 
 	int tam= sizeof(array)/sizeof(array[0]);
 
-	int ini = busquedaBinaria(array,0,n-1,)
+	int ini = busquedaBinaria(array,0,n-1);
 
 /*si la posicion de la mitad es mayor que el valor buscado llamo a busqueda_binaria con la mitad de la izquierda, es decir, desde inicio hasta la mitad.*/
 
@@ -24,18 +34,19 @@ int mitad = (ini + fin)/2;
 //si hago variable mitad, me dará siempre como resultado la mitad de la posicion, ya que he sumado el inicio + el fin y lo he dividido entre 2.
 //array[mitad] con pos a buscar
 
-if (a_buscar == array [mitad]) //Este primer if si es la base, y luego el segundo if pasa a ser parte de la recursión, ya que siempre se tiene las dos partes
+if (array[mitad] > a_buscar)
 {
-	return 1;	
+	return busquedaRecursiva (array,a_buscar,ini,mitad-1);
 }
-else if (a_buscar < array[mitad])
+else if (array[mitad] < a_buscar)
 {
-	return busquedaRecursiva (array,a_buscar,ini,mitad);
+	return busquedaRecursiva (array,a_buscar,mitad,fin);
 }
 
 else{
 	return busquedaRecursiva(array, a_buscar, mitad, fin);
 }
 
-
+return 0;
 }
+/*Hay lgun posible camino de la funcion que notermine con un return? -> pregunta despues de hacer la recursion*/
