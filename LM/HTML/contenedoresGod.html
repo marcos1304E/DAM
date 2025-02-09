@@ -1,0 +1,141 @@
+1. display - Tipos de Contenedores en CSS
+La propiedad display define cómo un elemento se comporta dentro del flujo del documento.
+
+Tipos principales de contenedores:
+Block (display: block;)
+
+Ocupa todo el ancho disponible.
+Empieza en una nueva línea.
+Ejemplo: <div>, <p>, <h1>
+Inline (display: inline;)
+
+Solo ocupa el espacio necesario.
+No permite definir width ni height.
+Ejemplo: <span>, <a>
+Inline-Block (display: inline-block;)
+
+Se comporta como inline, pero permite definir width y height.
+None (display: none;)
+
+Oculta completamente el elemento.
+Flex (display: flex;)
+
+Usa el modelo Flexbox para organizar los elementos en filas o columnas.
+Grid (display: grid;)
+
+	Usa una cuadrícula para organizar los elementos.
+🔹 2. Posicionamiento de Contenedores (position)
+	Define cómo un elemento se coloca en relación con otros elementos en la página.
+
+	Static (position: static;) (Por defecto)
+
+	El elemento sigue el flujo normal del documento.
+	Relative (position: relative;)
+
+	Se mueve respecto a su posición original sin afectar a otros elementos.
+	Absolute (position: absolute;)
+
+	Se mueve con respecto a su contenedor más cercano con position: relative.
+	Se ignora en el flujo normal del documento.
+	Fixed (position: fixed;)
+
+	Se mantiene fijo en la pantalla aunque se haga scroll.
+	Sticky (position: sticky;)
+
+	Se comporta como relative hasta que el usuario hace scroll, luego actúa como fixed.
+3. Modelo Flexbox (display: flex;)
+	El modelo Flexbox permite organizar elementos en filas o columnas, alineándolos de manera eficiente.
+
+	Propiedades principales:
+	✅ flex-direction:
+
+	row (Por defecto) → De izquierda a derecha.
+	row-reverse → De derecha a izquierda.
+	column → De arriba a abajo.
+	column-reverse → De abajo a arriba.
+	✅ flex-wrap:
+
+	nowrap (Por defecto) → Los elementos no se dividen en múltiples líneas.
+	wrap → Los elementos se ajustan a la siguiente línea si no hay espacio.
+	wrap-reverse → Igual que wrap, pero en orden inverso.
+	✅ justify-content: (Distribución horizontal)
+
+	flex-start (Por defecto) → Alinea los elementos a la izquierda.
+	flex-end → Alinea los elementos a la derecha.
+	center → Centra los elementos.
+	space-between → Distribuye el espacio entre elementos.
+	space-around → Espacios iguales a los lados de cada elemento.
+	space-evenly → Espacio uniforme entre elementos.
+	✅ align-items: (Distribución vertical en el eje principal)
+
+	stretch (Por defecto) → Los elementos ocupan toda la altura del contenedor.
+	flex-start → Alinea los elementos arriba.
+	flex-end → Alinea los elementos abajo.
+	center → Centra los elementos.
+	baseline → Alinea los elementos con la línea base del texto.
+	✅ align-content: *(Alineación de filas cuando hay flex-wrap: wrap)
+
+stretch (Por defecto)
+	flex-start, flex-end, center, space-between, space-around, space-evenly.
+	🔹 4. Modelo Grid (display: grid;)
+	El modelo CSS Grid permite organizar elementos en filas y columnas, creando un sistema de cuadrículas.
+
+	Propiedades principales:
+	✅ grid-template-columns:
+
+	Define el número de columnas y sus tamaños.
+	Ejemplo: grid-template-columns: 1fr 2fr 1fr;
+	✅ grid-template-rows:
+
+	Define el número de filas y sus tamaños.
+	Ejemplo: grid-template-rows: 100px auto 200px;
+	✅ grid-column-gap: / column-gap:
+
+	Espacio entre columnas.
+	✅ grid-row-gap: / row-gap:
+
+	Espacio entre filas.
+	✅ grid-gap:
+
+	Define espacio entre filas y columnas al mismo tiempo.
+	✅ justify-items: (Alineación horizontal dentro de cada celda)
+
+	start, end, center, stretch.
+	✅ align-items: (Alineación vertical dentro de cada celda)
+
+	start, end, center, stretch.
+	✅ justify-content: (Alineación horizontal del grid en su contenedor)
+
+	start, end, center, space-between, space-around, space-evenly.
+	✅ align-content: (Alineación vertical del grid en su contenedor)
+
+	start, end, center, space-between, space-around, space-evenly.
+	✅ grid-column-start: / grid-column-end:
+
+	Define en qué columna empieza y termina un elemento.
+	✅ grid-row-start: / grid-row-end:
+
+	Define en qué fila empieza y termina un elemento.
+	✅ grid-area:
+
+	Permite asignar un nombre a un área de la cuadrícula y colocar elementos dentro de ella.
+	✅ grid-auto-flow:
+
+	row (Por defecto) → Los elementos se colocan en filas.
+	column → Los elementos se colocan en columnas.
+🔹 5. Flotantes (float)
+	La propiedad float se usaba antes de Flexbox y Grid para crear diseños. Aunque ya no es la mejor opción, aún es útil en ciertos casos.
+
+	Valores de float:
+	✅ left; → El elemento flota a la izquierda.
+	✅ right; → El elemento flota a la derecha.
+	✅ none; → Elimina el flotado.
+
+	Para evitar que otros elementos se desplacen al lado de un float, se usa:
+	✅ clear: both; → Evita que otros elementos floten a su lado.
+
+	📌 Conclusión
+	Usa display: flex; cuando necesites distribuir elementos en filas o columnas de manera dinámica.
+	Usa display: grid; si necesitas un diseño basado en filas y columnas con mayor control.
+	Evita float para diseños complejos, pero sigue siendo útil en algunos casos.
+	Combina position, display, y flex/grid para lograr maquetaciones avanzadas.
