@@ -1,0 +1,46 @@
+#caja1{
+    background-color: blue;
+    width: 30vw;
+    height: 30vh;
+    display: inline-block;
+    position: relative;
+    float: left;
+    z-index: 3;
+
+}
+#caja2{
+    background-color: yellow;
+    width: 30vw;
+    height: 30vh;
+    display: inline-flex;
+    flex-wrap: wrap;/*Permite que los elementos hijos salten a la siguiente linea si no hay suficiente espacio en una sola fila*/
+    position: relative;/*Establece la posición del elemento como relativa a su posición original.
+    Permite moverlo con top, left, right, o bottom sin afectar a otros elementos.*/
+    float: left;
+    z-index: 2;
+    flex-direction: row-reverse;
+
+    
+    
+}
+#caja3{
+    background-color: aqua;
+    width: 30vw;
+    height: 30vh;
+    display: inline-block;/*Hace que el elemento se comporte como un bloque en línea.
+    Se alinea con otros elementos en la misma línea si hay espacio disponible.
+    A diferencia de inline, permite definir ancho (width) y alto (height).*/
+    position: relative;
+    float: left;
+}
+
+#cajaa{
+    background-color: pink;
+    width: 30%;
+    height: 30%;
+}
+#cajab{
+    background-color: green;
+    width: 30%;
+    height: 30%;
+}
