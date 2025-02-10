@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="examen3.css">
-    <title>HTML Y CSS</title>
+    <link rel="stylesheet" href="10febrero.css">
+    <title>Examen 10 de febrero</title>
 </head>
 
 <body>
     <div id="cajaPadreRosa">
         <div class="cajaMagenta">
-            <table border="1px">
+            <table>
                 <h2>TABLA DE DATOS DEL ALUMNO</h2>
                 <tr>
                     <th>Nombre alumno</th>
-                    <th colspan="4">XXXXXXXXXXXXXXXXX</th>
+                    <th colspan="3">XXXXXXXXXXXXXXXXX</th>
                 </tr>
                 <tr>
                     <th>Fecha del examen</th>
@@ -40,6 +40,10 @@
             <p>¿cómo te ha salido el examen <input type="radio" name="opcion"> Muy Bien <input type="radio"
                     name="opcion"> Bien <input type="radio" name="opcion"> Regular <input type="radio" name="opcion">
                 Mal</p>
+                <p>¿Qué es lo que mejor te ha salido? <select name="opcion" id="opciones"><option value="html" name="html">HTML</option>
+                    <option value="html" name="html">CSS</option>
+                    <option value="html" name="html">JavaScript</option></select></p>
+                    <p><input type="submit" value="Enviar"> <input type="reset" value="Borrar"></p>
         </div>
 
     </div>
@@ -47,11 +51,11 @@
         <div class="Lista">
             <h3 style="text-align: center;">LISTA NUMERADA</h3>
             <h4 style="text-align: center;">El texto es muy importante en una página web</h4>
-            <ul style="text-align: center;">
+            <ol style="text-align: center;">
                 <li>Lista con números romanos</li>
                 <li>Lista con números romanos</li>
                 <li>Lista con números romanos</li>
-            </ul>
+            </ol>
         </div>
         <div class="cajaVerde">
             <h3>LISTA NO NUMERADA</h3>
@@ -63,7 +67,7 @@
     </div>
     <div id="cajaNegra">
         <h3 style="text-align: center;">TABLA SENCILLA</h3>
-        <table border="1px" align="center">
+        <table id="tablaAbajo">
             <tr>
                 <th>Celda 1</th>
                 <th>Celda 2</th>
