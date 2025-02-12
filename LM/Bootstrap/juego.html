@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Penaltis 3D</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            border: 2px solid black;
+        }
+        #score, #misses {
+            position: absolute;
+            top: 20px;
+            font-size: 20px;
+        }
+        #misses {
+            left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="score">Score: 0</div>
+    <div id="misses">Misses: 0</div>
+
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let score = 0;
+        let isGameOver = false;
+        let isGameStarted = false;
+        let difficulty = 1;
+        let misses = 0;
+        const maxMisses = 3;
+
+        const goalWidth = 400; // Aumenta el tamaño de la portería
+        const goalHeight = 200; // Aumenta el tamaño de la portería
+        const goalX = (canvas.width - goalWidth) / 2;
+        const goalY = canvas.height - goalHeight - 20;
+
+        const keeperWidth = 50;
+        const keeperHeight = 70;
+        let keeperX = (canvas.width - keeperWidth) / 2;
+        let keeperTilt = 0;
+
+        let ballX = canvas.width / 2;
+        let ballY = canvas.height - 50;
+        let ballRadius = 20;
+        let isBallMoving = false;
+
+        canvas.addEventListener("click", shootBall);
+
+        function shootBall(event) {
+            if (!isBallMoving && isGameStarted && !isGameOver) {
+                isBallMoving = true;
+                ballY = canvas.height - 50;
+                let targetX = event.clientX - canvas.getBoundingClientRect().left;
+                let targetY = event.clientY - canvas.getBoundingClientRect().top;
+                let speed = 10;
+
+                // Move keeper to a random side
+                keeperTilt = targetX < keeperX + keeperWidth / 2 ? -15 : 15;
+                keeperX = Math.random() < 0.5 ? goalX : goalX + goalWidth - keeperWidth;
+
+                let interval = setInterval(() => {
+                    let dx = targetX - ballX;
+                    let dy = targetY - ballY;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < speed) {
+                        ballX = targetX;
+                        ballY = targetY;
+                        clearInterval(interval);
+                        isBallMoving = false;
+                        keeperTilt = 0;
+                        keeperX = (canvas.width - keeperWidth) / 2; // Reset keeper position
+                        if (ballY <= goalY + goalHeight && ballX >= goalX && ballX <= goalX + goalWidth) {
+                            if (ballX >= keeperX && ballX <= keeperX + keeperWidth) {
+                                // Keeper stops the ball
+                                misses++;
+                                document.getElementById("misses").innerText = "Misses: " + misses;
+                                if (misses >= maxMisses) {
+                                    isGameOver = true;
+                                }
+                            } else if (Math.abs(targetX - keeperX) < keeperWidth) {
+                                // Keeper moves in the direction of the ball
+                                misses++;
+                                document.getElementById("misses").innerText = "Misses: " + misses;
+                                if (misses >= maxMisses) {
+                                    isGameOver = true;
+                                }
+                            } else {
+                                score++;
+                                document.getElementById("score").innerText = "Score: " + score;
+                            }
+                        } else {
+                            misses++;
+                            document.getElementById("misses").innerText = "Misses: " + misses;
+                            if (misses >= maxMisses) {
+                                isGameOver = true;
+                            }
+                        }
+                        ballX = canvas.width / 2;
+                        ballY = canvas.height - 50;
+                    } else {
+                        ballX += (dx / distance) * speed;
+                        ballY += (dy / distance) * speed;
+                    }
+                    drawGame();
+                }, 30);
+            }
+        }
+
+        function drawKeeper() {
+            ctx.save();
+            ctx.translate(keeperX + keeperWidth / 2, canvas.height - keeperHeight - 40);
+            ctx.rotate((Math.PI / 180) * keeperTilt);
+            ctx.translate(-(keeperX + keeperWidth / 2), -(canvas.height - keeperHeight - 40));
+
+            ctx.fillStyle = "#ffcc99"; // Skin color for the keeper
+
+            ctx.beginPath();
+            ctx.arc(keeperX + keeperWidth / 2, canvas.height - keeperHeight - 40, 15, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = "#0000ff"; // Blue color for the keeper's shirt
+            ctx.fillRect(keeperX + keeperWidth / 4, canvas.height - keeperHeight - 25, keeperWidth / 2, 40);
+
+            ctx.fillStyle = "#000000"; // Black color for the keeper's pants
+            ctx.fillRect(keeperX + keeperWidth / 4, canvas.height - 20, keeperWidth / 8, 20);
+            ctx.fillRect(keeperX + keeperWidth * 5 / 8, canvas.height - 20, keeperWidth / 8, 20);
+
+            ctx.fillStyle = "#ffcc99"; // Skin color for the keeper's arms
+            ctx.fillRect(keeperX, canvas.height - keeperHeight - 25, keeperWidth / 4, 10);
+            ctx.fillRect(keeperX + keeperWidth * 3 / 4, canvas.height - keeperHeight - 25, keeperWidth / 4, 10);
+
+            ctx.restore();
+        }
+
+        function drawBall() {
+            ctx.fillStyle = "#0000ff";
+            ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
+            ctx.shadowOffsetX = 3;
+            ctx.shadowOffsetY = 3;
+            ctx.shadowBlur = 5;
+            ctx.beginPath();
+            ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowColor = "transparent";
+        }
+
+        function drawGoal() {
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(goalX, goalY, goalWidth, goalHeight);
+
+            ctx.fillStyle = "#888888";
+            const barSpacing = 30;
+            for (let i = 0; i < goalWidth / barSpacing; i++) {
+                ctx.fillRect(goalX + barSpacing * i, goalY, 10, goalHeight);
+            }
+        }
+
+        function drawStartScreen() {
+            ctx.fillStyle = "#000000";
+            ctx.font = "30px Arial";
+            ctx.fillText("Click to Start", canvas.width / 2 - 80, canvas.height / 2);
+        }
+
+        function drawGameOverScreen() {
+            ctx.fillStyle = "#000000";
+            ctx.font = "30px Arial";
+            ctx.fillText("Game Over", canvas.width / 2 - 80, canvas.height / 2);
+            ctx.fillText("Score: " + score, canvas.width / 2 - 50, canvas.height / 2 + 40);
+        }
+
+        function drawGame() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (!isGameStarted) {
+                drawStartScreen();
+            } else if (isGameOver) {
+                drawGameOverScreen();
+            } else {
+                drawGoal();
+                drawKeeper();
+                drawBall();
+            }
+        }
+
+        function startGame() {
+            if (!isGameStarted) {
+                isGameStarted = true;
+                score = 0;
+                misses = 0;
+                isGameOver = false;
+                difficulty = 1;
+                document.getElementById("score").innerText = "Score: " + score;
+                document.getElementById("misses").innerText = "Misses: " + misses;
+                setInterval(() => {
+                    if (isGameStarted && !isGameOver) {
+                        difficulty += 0.1;
+                    }
+                }, 10000);
+            }
+        }
+
+        canvas.addEventListener("click", startGame);
+
+        setInterval(drawGame, 30);
+    </script>
+</body>
+</html>
