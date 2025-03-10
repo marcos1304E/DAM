@@ -61,7 +61,7 @@ void calcular_promedio(){
 
 
 	printf("De cuantos numeros quiere hacer el promedio? (3 o 4)");
-	scanf("%d", cantidad_numeros ==3){
+	scanf("%d", cantidad_numeros ==3);
 
 		printf("Introduce el primer numero ");
 		scanf("%lf", &num1);
@@ -71,7 +71,7 @@ void calcular_promedio(){
 
 		printf("Introduce el tercer numero ");
 		scanf("%lf", &num3);
-		printf("El promedio de %lf, de %lf, y de %lf es 
+		printf("El promedio de %lf, de %lf, y de %lf es ");
 
 
 
