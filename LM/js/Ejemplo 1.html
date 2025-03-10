@@ -32,7 +32,7 @@
         }
         */
 
-        document.writeln("1.(en consola)<br>");
+    /*    document.writeln("1.(en consola)<br>");
         alert("Hello World");
 
         document.writeln("2. <br>");
@@ -61,9 +61,149 @@
         }
 
         document.writeln("7.<br>");
+        let num5 = prompt("Ingrese un número");
+        let num6 = prompt("Ingrese otro número");
+        let num7 = prompt("Ingrese otro número");
+        if(num5 > num6 && num5 > num7){
+            document.writeln(num5 + " es mayor que " + num6 + " y " + num7 + "<br>");
+        }else if(num6 > num5 && num6 > num7){
+            document.writeln(num6 + " es mayor que " + num5 + " y " + num7 + "<br>");
+        }else if(num7 > num5 && num7 > num6){
+            document.writeln(num7 + " es mayor que " + num5 + " y " + num6 + "<br>");
+        }
         
+        document.writeln("8.<br>");
+        let num8 = prompt("Ingrese un número");
+        if(num8 % 2 == 0){
+            document.writeln(num8 + " es par <br>");
+        }
+
+        document.writeln("9.<br>");
+        let frase = prompt("Ingrese una frase");
+        let contador = 0;
+        for(let i = 0; i < frase.length; i++){
+            if(frase[i] === 'a' || frase[i] === 'A'){
+            contador ++;
+            }
+        }
+        document.writeln("La letra 'a' aparece " + contador + " veces.<br>");
+
+        document.writeln("10.<br>");
+        let frase2 = prompt("Ingrese una frase");
+        let contador2 = 0;
+        let vocalesEncontradas = [];//Array para guardar las vocales encontradas
+        for(let i = 0; i < frase2.length; i++){//Recorre la frase
+            if(frase2[i] === 'a' || frase2[i] === 'e' || frase2[i] === 'i' || frase2[i] === 'o' || frase2[i] === 'u' || frase2[i] === 'A' || frase2[i] === 'E' || frase2[i] === 'I' || frase2[i] === 'O' || frase2[i] === 'U'){
+            contador2++;
+            vocalesEncontradas.push(frase2[i]);//.push para agregar esa vocal al array vocalesEncontradas
+            }
+        }
+        document.writeln("Las vocales que aparecen son: " + vocalesEncontradas.join(', ') + "<br>");//El .join es para que se muestren las vocales separadas por coma
+    
+
+        document.writeln("11.<br>");
+        let frase3= prompt("Ingrese una frase");
+        let contador3 = 0;
+        for(let i = 0; i < frase3.length; i++){
+            if(frase3[i] === 'a' || frase3[i] === 'e' || frase3[i] === 'i' || frase3[i] === 'o' || frase3[i] === 'u' || frase3[i] === 'A' || frase3[i] === 'E' || frase3[i] === 'I' || frase3[i] === 'O' || frase3[i] === 'U'){
+            contador3 ++;//contador para saber cuantas vocales hay
+            }
+        }
+        document.writeln("Las vocales aparecen " + contador3 + " veces.<br>");//Se muestra
+
+        document.writeln("12.<br>");
+        let frase4 = prompt("Ingrese una frase");
+        //cuantas veces aparecen cada vocal
+        let contadorA = 0;
+        let contadorE = 0;
+        let contadorI = 0;
+        let contadorO = 0;
+        let contadorU = 0;
+        for(let i = 0; i < frase4.length; i++){
+            if(frase4[i] === 'a' || frase4[i] === 'A'){
+            contadorA ++;
+            }else if(frase4[i] === 'e' || frase4[i] === 'E'){
+            contadorE ++;
+            }else if(frase4[i] === 'i' || frase4[i] === 'I'){
+            contadorI ++;
+            }else if(frase4[i] === 'o' || frase4[i] === 'O'){
+            contadorO ++;
+            }else if(frase4[i] === 'u' || frase4[i] === 'U'){
+            contadorU ++;
+            }
+        }
+        document.writeln("La vocal 'a' aparece " + contadorA + " veces.<br>");
+        document.writeln("La vocal 'e' aparece " + contadorE + " veces.<br>");
+        document.writeln("La vocal 'i' aparece " + contadorI + " veces.<br>");
+        document.writeln("La vocal 'o' aparece " + contadorO + " veces.<br>");
+        document.writeln("La vocal 'u' aparece " + contadorU + " veces.<br>");
+
+    */
+
+    document.writeln("13.<br>");
+    let num9 = prompt("Ingrese un número");
+    if(num9 % 2 == 0 || num9 % 3 == 0 || num9 % 5 == 0 || num9 % 7 == 0){
+        document.writeln(num9 + " es divisible entre 2, 3, 5 o 7.<br>");
+        
+    }
+
+    document.writeln("14.<br>");
+    let divisores = [];//Array para guardar los divisores
+    if (num9 % 2 == 0) divisores.push(2);//.push para agregar el divisor (2) al array
+    if (num9 % 3 == 0) divisores.push(3);
+    if (num9 % 5 == 0) divisores.push(5);
+    if (num9 % 7 == 0) divisores.push(7);
+
+    if (divisores.length > 0) {//Si el array tiene más de 0 elementos
+        document.writeln(num9 + " es divisible entre " + divisores.join(', ') + ".<br>");//Se muestran los divisores separados por coma
+    } else {//Si no tiene elementos
+        document.writeln(num9 + " no es divisible entre 2, 3, 5 o 7.<br>");//Se muestra que no es divisible
+    }
+
+    document.writeln("15.<br>");
+    let num10 = prompt("Ingrese un número");
+    let divisores2 = [];//Array para guardar los divisores
+    for (let i = 1; i <= num10; i++) {
+        if (num10 % i == 0) {//Si el número es divisible entre i
+            divisores2.push(i);//Se agrega i al array
+        }
+    }
+    document.writeln("Los divisores de " + num10 + " son: " + divisores2.join(', ') + ".<br>");//Se muestran los divisores separados por coma
+
+    document.writeln("16.<br>");
+    let num11 = prompt("Ingrese un número");
+    let num12 = prompt("Ingrese otro número");
+    let divisoresComunes = [];//Array para guardar los divisores comunes
+
+    for (let i = 1; i <= num11; i++) {//Se recorre desde 1 hasta el número más grande
+        if (num11 % i == 0 && num12 % i == 0) {//Si ambos números son divisibles entre i
+            divisoresComunes.push(i);//Se agrega i al array. i siendo el numero común
+            //se agrega al array divisoresComunes el divisor común
+        }//Hace bucle de 1 a num11, si num11 y num12 son divisibles entre i, se agrega i al array divisoresComunes
+    }
+    document.writeln("Los divisores comunes de " + num11 + " y " + num12 + " son: " + divisoresComunes.join(', ') + ".<br>");//Se muestran los divisores comunes separados por coma
 
 
+    document.writeln("17.<br>");
+    let num13 = prompt("Ingrese un número");
+
+    let esPrimo = true;//Variable para saber si el número es primo
+    if (num13 < 2) {
+        esPrimo = false;//Si el número es menor que 2, no es primo
+    } else {//Si el número es mayor o igual a 2
+        for (let i = 2; i <= Math.sqrt(num13); i++) {//Se recorre desde 2 hasta la raíz cuadrada del número
+            if (num13 % i == 0) {//Si el número es divisible entre i
+                esPrimo = false;//No es primo
+                break;//Se sale del bucle
+            }
+        }
+        //Cuando un numero no es primo, siempre tiene algun divisor menor o igual a su raiz cuadrada
+    }
+    if (esPrimo) {//Si es primo
+        document.writeln(num13 + " es un número primo.<br>");
+    } else {//Si no es
+        document.writeln(num13 + " no es un número primo.<br>");
+    }
     </script>
 </head>
 <body>
