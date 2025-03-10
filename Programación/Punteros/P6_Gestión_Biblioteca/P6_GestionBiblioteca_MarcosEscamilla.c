@@ -13,7 +13,6 @@ Programación
 Practica 6 -- Gestión de biblioteca
 */ //mas comentarios
 
-
 typedef enum{ //Enum para que se definan directamente, equivaldria a poner arriba varios defines con #define FICCION 0, por ejemplo, pero mucho más sencillo así y nos podemos entender para que abajo en el codigo si podamos poner la palabra literal FICCION, si no tendríamos que poner un 0.
 	FICCION, // 0
 	NO_FICCION, // 1
@@ -112,9 +111,7 @@ void IncrementarStock(Libro * stock_libro){ //Aqui no se podría poner const Lib
     }
 }
 
-int main(){ //int main(int argc, char ** argv){}...
-            //argc: número de argumentos recibidos
-            //argv: array de cadenas de texto
+int main(){
 
         int numero_libros, id, menu;
 
@@ -164,25 +161,11 @@ int main(){ //int main(int argc, char ** argv){}...
         {39, "The Republic", "Plato", 16.00, ENSAYO, 6},
         {40, "Thus Spoke Zarathustra", "Friedrich Nietzsche", 14.99, ENSAYO, 10}
         };
+ 
 
 
 
-/*
-Book * catalogo;
-catalogo = (Book*) malloc (40 * sizeof (Book));
-inicializarLibro(&catalogo[0], 1, "1984","George",...);
-inicializarLibro(&catalogo[1], 1, "1984","George",...);
-
-
-inicializarLibro(&catalogo[39], 40, "1984","George",...);
-
-
-void inicializar Libro (Book * dir,...)
-dir->id=
-dir->precio=
-strcpy(dir->autor,autor);
-*/
-
+        
 
         printf("¿Qué opción desea realizar?\n1(Mostrar catalogo)\n2(Buscar por id)\n3(Incrementar stock)\n4(Buscar por categoría)\n");//Buscar por categoria, e incerementar cant de libro
 
