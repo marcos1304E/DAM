@@ -101,6 +101,19 @@ function EjemploSplit(){//ejemplo de split
     for(let i=0;i<palabras.length;i++){//recorre las palabras
         document.writeln(palabras[i]+"<br>");//imprime las palabras
     }
+    let veces= frase.split(" ").length-1;//cuenta las palabras
+    document.writeln(veces);
+}
+
+function EjercicioAB(){
+    let frase = prompt("Ingrese una frase: ");
+    let letra = 'a';
+    let contador = 0;
+    for(let i of frase){
+        if(frase.includes(letra)){
+            contador++;
+        }
+    }
 
 }
 
@@ -114,6 +127,7 @@ function carga(){//funcion  que llama a todas las funciones y funciona como el m
     Ejercicio7();
     Ejercicio8();
     Ejercicio9();
+    Ejercicio9A();
     Ejercicio10();
     Ejercicio11();
     Ejercicio12();
@@ -123,7 +137,7 @@ function carga(){//funcion  que llama a todas las funciones y funciona como el m
     Ejercicio16();
     Ejercicio17();
     EjemploSplit();
-    Ejercicio9A();
+    
 }
     
 window.addEventListener("DOMContentLoaded",carga);//llamada a la funcion carga cuando se carga la pagina
