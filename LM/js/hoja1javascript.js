@@ -107,18 +107,77 @@ function EjemploSplit(){//ejemplo de split
 
 function EjercicioAB(){
     let frase = prompt("Ingrese una frase: ");
-    let letra = 'a';
+    let letra = "a";
     let contador = 0;
-    for(let i of frase){
+    for(let i = 0; i < frase.length; i++){
         if(frase.includes(letra)){
             contador++;
         }
     }
+    document.writeln("La cantidad de letras 'a' es: " + contador + "<br>");
+    
 
+}
+function Ejercicio9C(){
+    let frase = prompt("Ingrese una frase: ");
+    let contador = 0;
+    for (let char of frase){
+        if (char.toLowerCase() === "a"){
+            contador++;
+        }
+    }
+    document.writeln("La cantidad de letras 'a' es: " + contador + "<br>");
+}
+
+function Ejercicio10(){
+    let frase = prompt("Ingrese una frase: ");
+    let vocales = "aeiouAEIOU";
+    let vocalesEncontradas = "";
+    for(let char of frase){
+        if (vocales.includes(char)){
+            if(!vocalesEncontradas.includes(char)){
+                vocalesEncontradas += char;
+
+            }
+        }    
+    }
+    document.writeln("Las vocales encontradas son: " + vocalesEncontradas + "<br>");
+}
+
+function Ejercicio11(){
+    let frase = prompt("Ingrese una frase: ");
+    let vocales = "aeiouAEIOU";
+    let vocalesEncontradas = "";
+    let contador = 0;
+    for(let char of frase){
+        if (vocales.includes(char)){
+            if(!vocalesEncontradas.includes(char)){
+                vocalesEncontradas += char;
+
+            }
+            contador++;
+            
+        }    
+    }
+    document.writeln("La cantidad de vocales es: " + contador + "<br>");
+    document.writeln("Las vocales encontradas son: " + vocalesEncontradas + "<br>");
+}
+
+function Ejercicio12(){
+    let frase = prompt("Ingrese una frase: ");
+    let vocales = "aeiouAEIOU";
+    let vocalesEncontradas = {a:0,e:0,i:0,o:0,u:0};
+    
+    for(let char of frase){
+        if (vocales.includes(char.toLowerCase())){
+            vocalesEncontradas[char.toLowerCase()]++;
+        }    
+    } 
+    document.writeln("La cantidad de vocales a es: " + JSON.stringify(vocalesEncontradas) + "<br>");
 }
 
 function carga(){//funcion  que llama a todas las funciones y funciona como el main del programa
-    Ejercicio1();
+  /*  Ejercicio1();
     Ejercicio2();
     Ejercicio3();
     Ejercicio4();
@@ -137,7 +196,12 @@ function carga(){//funcion  que llama a todas las funciones y funciona como el m
     Ejercicio16();
     Ejercicio17();
     EjemploSplit();
-    
+    EjercicioAB();
+ 
+    Ejercicio9C();   
+    Ejercicio10();
+   Ejercicio11();
+   */ Ejercicio12();
 }
     
 window.addEventListener("DOMContentLoaded",carga);//llamada a la funcion carga cuando se carga la pagina
