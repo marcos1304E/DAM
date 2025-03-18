@@ -176,6 +176,24 @@ function Ejercicio12(){
     document.writeln("La cantidad de vocales a es: " + JSON.stringify(vocalesEncontradas) + "<br>");
 }
 
+function Ejercicio14(){//array dinamico
+    let num = parseInt (prompt("Ingrese un numero: "));
+    let divisibles = []; 
+    
+    if (num % 2 === 0) divisibles.push("2");
+    if (num % 3 === 0) divisibles.push("3");
+    if (num % 5 === 0) divisibles.push("5");
+    if (num % 7 === 0) divisibles.push("7");
+
+    if (divisibles.length > 0){
+        document.writeln(divisibles.join(", "));
+    } else {
+        document.writeln("No hay divisores");
+    }
+}
+
+
+
 function carga(){//funcion  que llama a todas las funciones y funciona como el main del programa
   /*  Ejercicio1();
     Ejercicio2();
@@ -201,7 +219,8 @@ function carga(){//funcion  que llama a todas las funciones y funciona como el m
     Ejercicio9C();   
     Ejercicio10();
    Ejercicio11();
-   */ Ejercicio12();
-}
+   Ejercicio12();
+  */  Ejercicio14();
+   }
     
 window.addEventListener("DOMContentLoaded",carga);//llamada a la funcion carga cuando se carga la pagina
