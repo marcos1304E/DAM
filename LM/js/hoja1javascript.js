@@ -117,8 +117,27 @@ function EjercicioAB(){
 
 }
 
+function EjercicioMiau(){//funcion que cuenta las veces que aparece la letra a en una frase
+    let frase = prompt("Ingrese una frase: ");
+    let contador = 0;
+   
+    for (let i = 0; i < frase.length; i++){
+    if (frase[i].includes("a")){
+       contador++;
+       console.log(contador);
+    }
+}
+}
+function EjercicioGuau(){
+    let frase = prompt("Ingrese una frase: ");
+    let espacios = frase.split("a");//si pongo hola me llamo marcos sería, [hol, me ll, mo m, rcos], hay 4 elementos, con el -1 se queda en 3, que es la cantidad de letras a
+    let contador = espacios.length - 1;
+
+    console.log("La frase tiene " + contador + " letras a");
+  
+}
 function carga(){//funcion  que llama a todas las funciones y funciona como el main del programa
-    Ejercicio1();
+  /*  Ejercicio1();
     Ejercicio2();
     Ejercicio3();
     Ejercicio4();
@@ -137,6 +156,9 @@ function carga(){//funcion  que llama a todas las funciones y funciona como el m
     Ejercicio16();
     Ejercicio17();
     EjemploSplit();
+    */
+    //EjercicioMiau();
+    EjercicioGuau();
     
 }
     
