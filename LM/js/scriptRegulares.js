@@ -30,9 +30,33 @@ function exp1(){
 /*  let expReg = /\b[0-9]{2},[0-9]{2}, [0-9]{4}\b/;
     let palabra = "23,01, 2008";
 */
+/*
+    function isFecha(fecha){
+    
+    const regex = /^\d{2}, 0[1-9]|1[0|1|2]], \d{4}$/;
+
+    if (regex.test(fecha)){
+        return true;
+    }else{
+        return false;
+    
+        }
+    }
+
+    let FechaPorPartes=fecha.split(",");
+    let day = parseInt(FechaPorPartes[0]);
+    let month = parseInt(FechaPorPartes[1]);
+    let year = parseInt(FechaPorPartes[2]);
+
+    let fechaIntroducieda= new Date(day, month, year);
+
+    /\b[A-Za-z0-9._%&]+\@[A-Za-z0-9]+\.[A-Za-z]{2,3}\b/;
+    fecha = /^(0[1-9]|[1-2][0-9]|3[0-1], (0[1-9]|1[0-2]), (19|20\d{2})$/;
+
+*/
 
     let palabra = prompt("correo:");
-    let expReg = /\b[A-Za-z0-9._%&]+\@[A-Za-z0-9]+\.[A-Za-z]{2,3}\b/;
+    let expReg = /\b[A-Za-z0-9._%&]+\@[A-Za-z0-9]+\.[A-Za-z]{2,3}\b/; 
 
 
     if(expReg.test(palabra)){
@@ -40,7 +64,7 @@ function exp1(){
     }else {
         document.writeln("<h2>False -->"+palabra+"</h2>");
     }
-
+    
 }
 function load(){
     exp1();
