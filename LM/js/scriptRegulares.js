@@ -1,3 +1,44 @@
+function isEmail(correo){
+    const regex=/^[a-zA-Z0-9._]+@[a-zA-Z]\.[a-z]{2,3}/;
+
+    if(regex.test(correo)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function isTelephone(telefono){
+    let regex = /^\d{2}-\d{3}-\d{2}-\d{2}-\d{2}$/;
+    if(regex.test(telefono)&&(telefono.length==10)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function contienePalabra(frase){
+    let palabra= "hola";
+    let partes=frase.split(palabra);
+    return partes.length()-1;
+
+}
+
+function reemplazarPalabra(palabra, reemplazo, frase){
+    return frase.replace(new RegExp(palabra, "gi"), reemplazo);
+}
+
+function isPasswordCorrect(password){
+    let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+$/;
+
+    if(regex.test(password)){
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
 function exp1(){
     //1. Empiece por A mayuscula y minuscula
     //let expReg=/^[A|a]/;
@@ -47,9 +88,21 @@ function exp1(){
     let day = parseInt(FechaPorPartes[0]);
     let month = parseInt(FechaPorPartes[1]);
     let year = parseInt(FechaPorPartes[2]);
-
+  //creamos el objeto de la fecha
     let fechaIntroducieda= new Date(day, month, year);
+//fecha actual
+let fecha = new Date();
 
+//la diferencia la devuelve en milisegundos
+let diferencia = fechaActual.getTime - fechaIntroducida.getTime;
+
+let diasTranscurridos=Math.round(diferencia / (1000*60*60*24))
+
+alert(diasTranscurridos);
+
+}else {
+    docu write formato no correcto + fecha
+}
     /\b[A-Za-z0-9._%&]+\@[A-Za-z0-9]+\.[A-Za-z]{2,3}\b/;
     fecha = /^(0[1-9]|[1-2][0-9]|3[0-1], (0[1-9]|1[0-2]), (19|20\d{2})$/;
 
@@ -58,8 +111,10 @@ function exp1(){
 //ejercicio 2
 /*
     let palabra = prompt("correo:");
-    let expReg = /\b[A-Za-z0-9._%&$]+\@[A-Za-z0-9]+\.[A-Za-z]{2,3}\b/; 
+    let expReg = /\b[A-Za-z0-9._%&$]+\@[A-Za-z0-9]+\.[A-Za-z]{2,3}\b/;
 */
+
+
     let palabra = prompt("tfno:");
     let expReg = /[0-9]{2}\- [0-9]{3}\-[0-9]{2}\-[0-9]{2}\-[0-9]{2}/;
 
@@ -72,5 +127,7 @@ function exp1(){
 }
 function load(){
     exp1();
+    contienePalabra();
+    isPasswordCorrect(password);
 }
 window.addEventListener("DOMContentLoaded", load, false);
