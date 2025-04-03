@@ -7,7 +7,8 @@ public class Ejercicio3 {
 		Scanner entrada = new Scanner(System.in);
 
 		int n, suma = 0;//para acumular suma de los nums ingresados
-		String expresion = "";//almacena representacion en forma de suma (2+3+4)
+		String expresion = "";//almacena representacion en forma de suma (2+3+4) como una cadena de texto, que inicialmente está vacia.
+				
 
 
 		System.out.println("Introduce números enteros");
@@ -19,7 +20,7 @@ public class Ejercicio3 {
 			}
 			suma += n;//acumulamos numero en variable
 
-			if (!expresion.isEmpty()) {//si la expresion no está vacía, se agrega un '+'
+			if (!expresion.isEmpty()) {//si la expresion no está vacía, se agrega un '+' antes del siguiente numero, para representar la suma
 
 				expresion += "+";
 			}//luego se concatena
