@@ -1,5 +1,5 @@
 function isEmail(correo){
-    const regex=/^[a-zA-Z0-9._]+@[a-zA-Z]\.[a-z]{2,3}/;
+    const regex=/^[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-z]{2,3}/;
 
     if(regex.test(correo)){
         return true;
@@ -39,6 +39,106 @@ function isPasswordCorrect(password){
 
 }
 
+function isUserCorrect(usuario){
+    const regex=/^[a-zA-Z0-9._]$/;
+    if(regex.test(ususario)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function ejercicio4(){
+    let oracion = prompt("").toLowerCase();
+    let palabra = prompt("").toLowerCase();
+
+    let regex = new RegExp(palabra, 'g');
+    let coincidencias=oracion.match(regex).length;
+    
+
+}
+
+/*
+
+    function ejercicio2(){
+ if(isEmail(correo)){       
+    documentwriteln(h2 partes.length + h2)
+}else{
+           
+            if(!isUserCorrect(partesCorreo[0])){
+                if(!isDomainCorrect(partesCorreo[1])){
+                    alert(husuario y dominio)
+
+                }else{
+                    alert(usuario mal);
+                }
+
+            }else{
+
+            if(!isDomain(partesCorreo[1]))
+                alert(dominio)
+            }else{
+            //no entra nunca
+                alert(correo mal le falta @)
+            }
+        }
+    }
+
+function ejercicio3(){
+    let prefijos= 
+    [{prefijo:'945', ciudad:'Alava'},
+    {prefijo:'967', ciudad:'Albacete'},
+    {prefijo:'91', ciudad:'Madrid'}];
+    let phone= prompt("");
+    let prefix= phone.split("-")[0]
+    let origen=null;
+    let i = 0;
+
+    while((origen===null) && (i < prefijos.length)){
+    if(prefijos[1].prefijo===prefix){
+
+    origen=prefijos[i].ciudad
+
+    }
+    i++;
+}
+    }else{
+
+    let caracteres=phone.replace(/-/g, "").length;
+    if(caracteres > 14){
+        docu.wln("al telefono le sobran numeros");
+    }else{
+        do.wrtln("al telefono le faltan nuimeros")
+    }
+    
+    }
+
+    
+}
+
+function isDomainCorrect(dominio){
+    const regex= /^[a-zA-z]+\.[a-z]{2,3}$/;
+
+    if(regex.test(dominio)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+
+function ejercicio2(){
+
+    let correo= prompt
+    let partesCoreo=correo.split("@")
+
+    if(isEmail(correo)){
+        documentwritleln("<h2> +partesCorreo[0].length+ </h2>")
+    }else{
+        alert(correo iunvalido)    
+    }
+}*/
 function exp1(){
     //1. Empiece por A mayuscula y minuscula
     //let expReg=/^[A|a]/;
