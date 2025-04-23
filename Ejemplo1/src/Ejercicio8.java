@@ -19,9 +19,9 @@ public class Ejercicio8 {
 		}
 		
 		entrada.close();
-
-	}
-	
+		
+	}	
+		
 		private static boolean Buscar_letras(String str, int ini, int fin) {
 			if(ini >= fin) {
 				return true;
@@ -41,7 +41,7 @@ public class Ejercicio8 {
 			 * 	return true;//brrr
 			 * }
 			 * 
-			 */
+			 */ 
 			
 	}
 	
