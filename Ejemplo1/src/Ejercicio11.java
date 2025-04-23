@@ -10,7 +10,7 @@ Scanner entrada = new Scanner(System.in);
 		int altura = entrada.nextInt();
 		
 		
-		System.out.println("triangulo macizo:");
+		System.out.println("triangulo equilatero macizo:");
 		
 		for(int i = 0; i <= altura; i++) {
 			
