@@ -6,6 +6,13 @@
     <title>EVENTOS</title>
     <script src="tatiana.js"></script>
 </head>
+<style>
+    #zona {
+        width: 300px;
+        height: 300px;
+        border: 2px solid black;
+    }
+</style>
 <body>
 
     <h1>EVENTOS</h1>
@@ -15,8 +22,16 @@
     <h2>2. Escribir cuadro de texto</h2>
         <input id="cuadroTexto" type="text">
         <div id="textoSalida"></div>
-        <h2>3.Capturar las propiedades de los eventos</h2>
-            <button id="boton3">Generar un evento</button>
-
+    <h2>3.Capturar las propiedades de los eventos</h2>
+        <button id="boton3">Generar un evento</button>ç
+    <h2>4.Capturar las coordenadas del ratón</h2>
+        <div id="zona">Pasa por aqui el raton</div>
+        <div id="coordenadas"></div>
+    <h2>5.Recoger datos de un formulario</h2>
+    <form id="formulario">
+        Nombre: <input id="nombre" type="text">
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="resultado"></div>
 </body>
 </html>
