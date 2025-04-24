@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <script src="Eventos2.js"></script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            color: white;
+            background: linear-gradient(90deg, #ff6f61, #ffcc70);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        button {
+            background: linear-gradient(90deg, #00c9ff, #92fe9d);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ff6f61;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        #mostrarNumero {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6a0572;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body onload="load()">
+  
+    <h1>Ejercicio1</h1>
+        <button id="numeroAleatorio">Generar numero Aleatorio</button>
+        <div id="mostrarNumero"></div>
+    <h1>Ejercicio2</h1>
+        <form>
+            Número para la cuenta atrás : <input type="number" id="tiempo" value="10">
+            <button id="cuentaAtras">Hacer cuenta atrás</button>
+        </form>
+    <h1>Ejercicio3</h1>
+    <h1>Ejercicio4</h1>
+    <h1>Ejercicio5</h1>
+    
+</body>
+</html>

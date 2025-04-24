@@ -33,6 +33,6 @@ function load(){
     zona.addEventListener ("mousemove", (event) => (document.getElementById("coordenadas").textContent=`Coordenadas: X= ${event.clientX} Y= ${event.clientY}`));
     formulario.addEventListener("submit", mostrarDatos);
 
-}
-
 window.addEventListener("DOMContentLoaded", load, false);
+
+}
