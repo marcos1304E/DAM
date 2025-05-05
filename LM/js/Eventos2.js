@@ -29,22 +29,28 @@ function rellenarTabla2(){
     
 }
 
-/*function palabras(){
-    
-    let palabras = ["Hola", "Adios", "Bienvenido", "HastaLuego", "Gracias"];
-    let palabraAleatoria = palabras[Math.floor(Math.random() * palabras.length)];
-    let contador = 0;
-    
-}
-*/
-
-function ahorcado(event){
+function generarPalabra(){
     let palabras = ["perro", "gato", "tortuga", "pez", "caiman"];
     let palabrasSeleccionadas = palabras[random(palabras.length)];
-
-    console.log(event.target.textContent);
-
+    let letra = event.target.textContent;
 }
+
+function ahorcado(event, palabrasSeleccionadas){
+    let contador = 0;
+
+    console.log(palabrasSeleccionadas);
+
+    for (let i = 0; i < palabrasSeleccionadas.length; i++){
+        if(palabrasSeleccionadas[i] === letra){
+            contador++;
+            event.target.disabled=true;
+        }
+    }
+
+    document.getElementById("resultado").textContent = `letras encontradas: ${contador}`;
+}
+
+
 
 
 function load(){
@@ -65,7 +71,10 @@ function load(){
 
 
     let letras = document.querySelectorAll(".ejercicio5");
+    palabrasSeleccionadas=generarPalabra();
     letras.forEach(botonesLetras => botonesLetras.addEventListener('click', ahorcado));
+
+    
 
 }
 
