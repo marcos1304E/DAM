@@ -5,7 +5,13 @@ public class Persona {
 	double peso;
 	boolean pelo;
 	String voz;
-
+	
+	
+	@Override
+	public String toString() {
+		return "Persona [edad=" + edad + ", altura=" + altura + ", peso=" + peso + ", pelo=" + pelo + ", voz=" + voz
+				+ "]";
+	}
 	public int getEdad() {
 		return edad;
 	}
@@ -36,7 +42,7 @@ public class Persona {
 	public void setVoz(String voz) {
 		this.voz = voz;
 	}
-
+	
 	public Persona(int edad, double altura, double peso, boolean pelo, String voz) {
 		super();//llama a la clase padre
 		this.edad = edad;
@@ -45,6 +51,11 @@ public class Persona {
 		this.pelo = pelo;
 		this.voz = voz;
 	}
-
+	public Persona (int edad) {
+		super();
+		this.edad= 99;
+	}
+	
 }
 
+ 
