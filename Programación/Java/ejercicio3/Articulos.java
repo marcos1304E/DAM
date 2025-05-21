@@ -1,17 +1,24 @@
 public class Articulos {
 
-	int id_unico;
+	int id;
 	String titulo;
 	boolean estadoDisponibilidad;
 	
 	
 	
+	public Articulos(int id, String titulo, boolean estadoDisponibilidad) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.estadoDisponibilidad = estadoDisponibilidad;
+	}
+
 	public int getId_unico() {
-		return id_unico;
+		return id;
 	}
 	
-	public void setId_unico(int id_unico) {
-		this.id_unico = id_unico;
+	public void setId_unico(int id) {
+		this.id = id;
 	}
 	
 	public String getTitulo() {
@@ -29,5 +36,21 @@ public class Articulos {
 	public void setEstadoDisponibilidad(boolean estadoDisponibilidad) {
 		this.estadoDisponibilidad = estadoDisponibilidad;
 	}
+
+	@Override
+	public String toString() {
+		return "Articulos [id=" + id + ", titulo=" + titulo + ", estadoDisponibilidad="
+				+ estadoDisponibilidad + "]";
+	}
+
+	public void prestarArticulo(){
 		
+		if (this.estadoDisponibilidad) {
+			
+		}
+		
+	}
+	
+	//devolverArticulo();
+	
 }
