@@ -1,17 +1,14 @@
-public class Revistas extends Articulos {
+public class Revistas extends Articulos{
 
-	int num_edicion;
+	private int num_edicion;
+	
+	
+	
+	public Revistas(int id, String titulo, boolean estadoDisponibilidad,int num_edicion) {
+		super(id, titulo, estadoDisponibilidad);
 
-	public Revistas (int id_unico, String titulo, boolean estadoDisponibilidad) {
-		super(id_unico, titulo, estadoDisponibilidad);
-		this.
-	}
-	
-	
-	
-	public Revistas(int num_edicion) {
-		super();
 		this.num_edicion = num_edicion;
+		
 	}
 
 
@@ -24,8 +21,4 @@ public class Revistas extends Articulos {
 		this.num_edicion = num_edicion;
 	}
 	
-	
-	
-	
 }
-
