@@ -1,19 +1,13 @@
-public class Libros extends Articulos {
+public class Libros extends Articulos{
 
-	String autor;
+	private String autor;
 
-	public Libros(String autor) {
-		super();
+	public Libros(int id, String titulo, boolean estadoDisponibilidad, String autor) {
+		super(id, titulo, estadoDisponibilidad);
 		this.autor = autor;
+		
 	}
 
-	public Libros() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	 
 	
 	
 }
-
