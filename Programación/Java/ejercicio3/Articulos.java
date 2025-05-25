@@ -43,13 +43,6 @@ public class Articulos {
 				+ estadoDisponibilidad + "]";
 	}
 
-	public void prestarArticulo(){
-		
-		if (this.estadoDisponibilidad) {
-			
-		}
-		
-	}
 	
 	//devolverArticulo();
 	
