@@ -1,0 +1,4 @@
+INICIO:na línea 1
+INICIO:tra línea 2
+INICIO:jemplo línea 3
+INICIO:tra línea 4

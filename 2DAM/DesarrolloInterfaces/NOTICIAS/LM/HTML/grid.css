@@ -1,0 +1,27 @@
+
+#cajaAmarilla {
+    background-color: yellow;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 50px;
+    padding: 10px;
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+.cajaAzul {
+    background-color: blue;
+    color: white;
+    height: 20px;
+
+}
+
+.cajaRosa {
+    background-color: rgb(255, 34, 156);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    color: white;
+    height: 20px;
+}

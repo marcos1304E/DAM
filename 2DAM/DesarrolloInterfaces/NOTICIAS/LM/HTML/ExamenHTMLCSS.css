@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#cabecera{
+    background-color: greenyellow;
+
+}
+.hijito{
+    background-color: rgb(78, 78, 255);
+    margin-left: 70px;
+    margin-right: 60%;
+   
+}
+#hijos2{
+    background-color: rgb(78, 78, 255);
+    margin-right: 70px;
+    margin-left: 60%;
+}
+#cajaAmarilla{
+    background-color: yellow;
+    height: 200px;
+    width: 100%;
+
+}
+.cajaRosa{
+    background-color: pink;
+    height: 80px;
+    width: 40%;
+    margin-left: 100px;
+    margin-top: 70px;
+}
+.cajaAzul{
+    background-color: blue;
+    height: 80px;
+    width: 40%;
+    margin-left: 70px ;
+    margin-top: -100px;
+}
+.cajaMorada{
+    background-color: rgb(86, 0, 107);
+    height: 80px;
+    width: 40%;
+    margin-top: -130px;
+}
+.cajaNaranja{
+    background-color: orange;
+    height: 80px;
+    width: 40%;
+    margin-left: 27px;
+    margin-top: -65px;
+}
+.cajaHotpink{
+    background-color: hotpink;
+    margin-right: 60%;
+    float: left;
+    position: absolute;
+    width: 40vw;
+}
+.cajaCielo{
+    background-color: cyan;
+    position: relative;
+    margin-left: 36%;
+    margin-right: 40% ;
+    height: 23.2vh;
+    
+}
+#parte3{
+    margin: 0;
+    padding: 0;
+}
+.cajaUltima{
+    background-color: blue;
+    margin-left: 85%;
+    height: 30vh;
+    padding: 10px;
+}
+#Hijos1{
+    gap: 10px;
+}

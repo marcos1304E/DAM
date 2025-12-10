@@ -1,0 +1,29 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1  21648 12836 ?        Ss   18:31   0:00 /sbin/init
+root           2  0.0  0.0   2776  1920 ?        Sl   18:31   0:00 /init
+root           7  0.0  0.0   3060  2160 ?        Sl   18:31   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          54  0.0  0.2  66820 19612 ?        S<s  18:33   0:00 /usr/lib/systemd/systemd-journald
+root          96  0.0  0.0  24012  6184 ?        Ss   18:33   0:00 /usr/lib/systemd/systemd-udevd
+systemd+     150  0.0  0.1  21452 11924 ?        Ss   18:33   0:00 /usr/lib/systemd/systemd-resolved
+systemd+     151  0.0  0.0  91020  6532 ?        Ssl  18:33   0:00 /usr/lib/systemd/systemd-timesyncd
+root         157  0.0  0.0   4236  2672 ?        Ss   18:33   0:00 /usr/sbin/cron -f -P
+message+     158  0.0  0.0   9532  5176 ?        Ss   18:33   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         169  0.0  0.1  17976  8444 ?        Ss   18:33   0:00 /usr/lib/systemd/systemd-logind
+root         174  0.0  0.1 1756096 15968 ?       Ssl  18:33   0:00 /usr/libexec/wsl-pro-service -vv
+root         180  0.0  0.0   3160  1152 hvc0     Ss+  18:33   0:00 /sbin/agetty -o -p -- \u --noclear --keep-baud - 115200,38400,9600 vt220
+root         184  0.0  0.0   3116  1092 tty1     Ss+  18:33   0:00 /sbin/agetty -o -p -- \u --noclear - linux
+syslog       189  0.0  0.0 222508  7228 ?        Ssl  18:33   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         206  0.0  0.2 107016 22628 ?        Ssl  18:33   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         301  0.0  0.0   2780   204 ?        Ss   18:33   0:00 /init
+root         302  0.0  0.0   2780   208 ?        S    18:33   0:00 /init
+marcos       303  0.0  0.0   6072  5184 pts/0    Ss   18:33   0:00 -bash
+root         304  0.0  0.0   6820  4740 pts/1    Ss   18:33   0:00 /bin/login -f
+marcos       396  0.0  0.1  20260 11408 ?        Ss   18:33   0:00 /usr/lib/systemd/systemd --user
+marcos       397  0.0  0.0  21144  1728 ?        S    18:33   0:00 (sd-pam)
+marcos       410  0.0  0.0   6072  5192 pts/1    S+   18:33   0:00 -bash
+marcos       457  0.0  0.0   9268  4660 pts/0    S+   18:33   0:00 tmux
+marcos       459  0.0  0.0  10260  5256 ?        Ss   18:33   0:01 tmux
+marcos       460  0.0  0.0   6204  5448 pts/2    Ss   18:33   0:00 -bash
+marcos       461  0.0  0.0   9288  4436 ?        Ss   18:33   0:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+marcos       924  0.0  0.0   6204  3664 pts/2    S+   19:01   0:00 -bash
+marcos       925  0.0  0.0   8280  4036 pts/2    R+   19:01   0:00 ps aux

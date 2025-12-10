@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    position: relative;
+}
+h1{
+    text-align: center;
+}
+
+#cajaAmarilla{
+    background-color: yellow;
+    width: 50vw;
+    height: 33vh;
+    padding: 20px;
+}
+.cajaNaranja{
+    background-color: orange;
+}
+#cajaAzul{
+    background-color: blue;
+    width: 50vw;
+    height: 33vh;
+    padding: 20px;
+}
+#cabecera{
+    display: flex;
+}
+#cajaRosa{
+    background-color: pink;
+    height: 13vh;
+    
+}
+.tabla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+td{
+   width: 10vw; 
+}
+.opciones{
+    background-color: turquoise;
+    height: 5vh;
+    width: 15vw;
+    text-align: center;
+}
+#cajaVerde{
+    background-color: green;
+    margin-left: 50%;
+    padding: 10px;
+}
+.mitabla{
+    background-color: purple;
+}
+

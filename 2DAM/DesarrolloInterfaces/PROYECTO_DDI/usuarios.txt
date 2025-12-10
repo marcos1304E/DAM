@@ -1,0 +1,4 @@
+admin;1234;marcosescamilla1304@gmail.com;ADMIN
+usuario1;1111;user1@correo.com;USER
+usuario2;2222;user2@correo.com;USER
+usuario3;3333;user3@correo.com;USER

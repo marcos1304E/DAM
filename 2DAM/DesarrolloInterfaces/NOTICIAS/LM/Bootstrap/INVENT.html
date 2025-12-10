@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <style>
+        .color_caja1 {
+            background-color: rgb(90, 232, 51);
+        }
+
+        .color_caja2 {
+            background-color: orange;
+        }
+
+        @media(min-width:769px) and (max-width:992px) {
+            .color_caja2 {
+                background-color: pink;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="p-2 border color_caja1 text-center">Header</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-sm-3 offset-md-3">
+                <div class="p-2 border bg-primary text-center">1</div>
+            </div>
+            <div class="col-6 col-sm-3 me-md-3">
+                <div class="p-2 border bg-primary text-center">2</div>
+            </div>
+            <div class="col-6 col-sm-3">
+                <div class="p-2 border bg-primary text-center">3</div>
+            </div>
+            <div class="col-6 col-sm-3 offset-md-6">
+                <div class="p-2 border bg-primary text-center">4</div>
+            </div>
+        </div>
+        <div class="row d-none d-sm-block d-md-none"> <!--Elegimos cuando aparece y en que tamaño se oculta.-->
+            <div class="col">
+                <div class="p-2 border bg-info">Tablet</div>
+            </div>
+        </div>
+        <div class="row">
+            <!--Aqui varía el orden-->
+            <div class="col-6 col-sm-3 order-md-4">
+                <div class="p-2 border bg-secondary text-center">A</div>
+            </div>
+            <div class="col-6 col-sm-3 order-md-3">
+                <div class="p-2 border bg-secondary text-center">B</div>
+            </div>
+            <div class="col-6 col-sm-3 order-md-2">
+                <div class="p-2 border bg-secondary text-center">C</div>
+            </div>
+            <div class="col-6 col-sm-3 order-md-1">
+                <div class="p-2 border bg-secondary text-center">D</div>
+            </div>
+        </div>
+        <div class="row d-none d-md-block"><!--Solo se ve en la pestaña grande-->
+            <div class="col">
+                <div class="p-2 border bg-info text-center">Desktop</div>
+            </div>
+        </div>
+        <div class="row d-block d-sm-none"><!--Solo se ve en la pestaña pequeña-->
+            <div class="col">
+                <div class="p-2 border bg-info text-center">Mobile</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-3 offset-md-3">
+                <div class="p-2 border color_caja2 text-center">:D</div>
+            </div>
+            <div class="col col-md-3 d-none d-sm-block">
+                <div class="p-2 border color_caja2 text-center">:(</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-none d-sm-block">
+                <div class="p-2 border color_caja1 text-center">footer</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
