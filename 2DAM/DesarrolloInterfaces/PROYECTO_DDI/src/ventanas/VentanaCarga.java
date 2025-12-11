@@ -1,14 +1,22 @@
 package ventanas;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.EventQueue;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JProgressBar;
-import java.io.File;
-import javax.swing.JFrame;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+
 
 public class VentanaCarga {
 
@@ -51,8 +59,9 @@ public class VentanaCarga {
 	private void initialize() {
 
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(255, 255, 255));
-
+		//frame.getContentPane().setBackground(new Color(255, 255, 255));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\DAM\\eclipse-workspace\\WindowsBuilder\\src\\png-transparent-computer-icons-setting-icon-cdr-svg-setting-icon.png"));
+		
 		frame.setBounds(100, 100, 610, 446);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
@@ -64,14 +73,50 @@ public class VentanaCarga {
 		progressBar.setBounds(50, 350, 500, 25);
 		frame.getContentPane().add(progressBar);
 
-		JLabel lblFondo = new JLabel("");/// NOTICIAS/src/Imagenes/descargaNoti.jpg
-		lblFondo.setIcon(new ImageIcon(VentanaCarga.class.getResource("/Imagenes/descargaNoti.jpg")));
-		;
-		lblFondo.setBounds(0, 0, 594, 407);
-		frame.getContentPane().add(lblFondo);
+		frame.getContentPane().add(buscarImagen());
+		
+		
+		//JLabel lblFondo = new JLabel("");/// NOTICIAS/src/Imagenes/descargaNoti.jpg
+		//lblFondo.setBackground(new Color(255, 255, 255));
+		//lblFondo.setIcon(new ImageIcon(VentanaCarga.class.getResource("PROYECTO_DDI/Imagenes/descargaNoti.jpg")));	
+		//lblFondo.setBounds(0, 0, 594, 407);
+		//frame.getContentPane().add(lblFondo);
+		
+		JPanel panelConFondo = new JPanel() {
+			protected void paintComponent() {
+				
+			}
+		};
 
 	}
-
+	
+	private Component buscarImagen() {
+		BufferedImage fondo = null;
+		//cargar imagen
+		try {
+			
+		fondo = ImageIO.read(new File("PROYECTO_DDI/Imagenes/descargaNoti.jpg"));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		//asignar la imagen a un jpanel
+		final Image foto = fondo;
+		JPanel panelConFondo = new JPanel() {
+			
+			private static final long SerialVersionUID = 1L;
+			@Override
+			protected void paintComponent(Graphics g) {
+				
+				super.paintComponent(g);
+				g.drawImage(foto,0,0,getWidth(), getHeight(),null);
+			}
+			
+		};
+		
+		return panelConFondo;
+	}
+ 
 	public void iniciarCarga() {
 
 		Thread hilo = new Thread(new Runnable() {
@@ -79,7 +124,7 @@ public class VentanaCarga {
 			public void run() {
 				try {
 					for (int i = 0; i <= 100; i++) {
-						Thread.sleep(50);
+						Thread.sleep(40);
 						progressBar.setValue(i);
 
 						if (i == 80) {

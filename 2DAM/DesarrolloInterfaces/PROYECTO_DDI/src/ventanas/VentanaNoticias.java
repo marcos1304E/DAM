@@ -6,8 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.Usuario;
 import modelo.Noticia;
-import datos.GestionNoticias; // Este es el de Jsoup (internet)
-import datos.GestionFicheros; // <--- AQUÍ ESTÁ TU CLASE CORRECTA
+import datos.GestionNoticias;
+import datos.GestionFicheros;
 
 public class VentanaNoticias extends JDialog {
 
@@ -37,7 +37,8 @@ public class VentanaNoticias extends JDialog {
         // ÁREA DE TEXTO
         areaTextoNoticias = new JTextArea();
         areaTextoNoticias.setEditable(false); 
-        areaTextoNoticias.setFont(new Font("Monospaced", Font.PLAIN, 14)); 
+        areaTextoNoticias.setFont(new Font("Monospaced", Font.PLAIN, 14));
+        
         areaTextoNoticias.setMargin(new Insets(10, 10, 10, 10));
         
         JScrollPane barraDesplazamiento = new JScrollPane(areaTextoNoticias);
@@ -59,7 +60,7 @@ public class VentanaNoticias extends JDialog {
     }
 
     private void cargarNoticias() {
-        areaTextoNoticias.setText("Conectando con los periódicos, por favor espere...\n\n");
+        areaTextoNoticias.setText("Conectando con los periódicos\n\n");
         
         Thread hiloDescarga = new Thread(new Runnable() {
             @Override

@@ -73,7 +73,7 @@ public class MenuPrincipal extends JFrame {
 
         JLabel textoBienvenida = new JLabel("Bienvenido, " + usuarioLogueado.getNickname());
         textoBienvenida.setFont(new Font("Tahoma", Font.BOLD, 18));
-        textoBienvenida.setBounds(20, 20, 400, 30);
+        textoBienvenida.setBounds(270, 11, 400, 30);
         getContentPane().add(textoBienvenida);
 
         if (usuarioLogueado.isAdmin()) {

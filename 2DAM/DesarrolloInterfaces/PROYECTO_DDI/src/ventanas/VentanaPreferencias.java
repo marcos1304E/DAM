@@ -132,7 +132,7 @@ public class VentanaPreferencias {
         comboCine.setBounds(150, 320, 250, 20);
         frame.getContentPane().add(comboCine);
 
-        // --- BOTÓN GUARDAR ---
+
         JButton botonGuardar = new JButton("GUARDAR PREFERENCIAS");
         botonGuardar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

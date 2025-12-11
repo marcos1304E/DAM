@@ -87,13 +87,13 @@ public class GestionFicheros {
     
     public String[] cargarPreferencias(Usuario usuario) {
         
-        java.io.File archivo = new java.io.File("preferencias.txt");
+        File archivo = new File("preferencias.txt");
         
         if (!archivo.exists()) {
             return null; 
         }
 
-        try (java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(archivo))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
             String linea;
             while ((linea = br.readLine()) != null) {
                 if (linea.startsWith(usuario.getNickname() + ";")) {
@@ -111,7 +111,7 @@ public class GestionFicheros {
                     return fuentes;
                 }
             }
-        } catch (java.io.IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
