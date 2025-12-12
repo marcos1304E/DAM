@@ -106,7 +106,7 @@ public class VentanaPreferencias {
         frame.getContentPane().add(lblInternacional);
 
         comboInternacional = new JComboBox<>();
-        comboInternacional.setModel(new DefaultComboBoxModel<>(new String[] {"CNN", "BBC News", "Le Monde"}));
+        comboInternacional.setModel(new DefaultComboBoxModel<>(new String[] {"The Guardian", "BBC News", "Le Monde"}));
         comboInternacional.setBounds(150, 220, 250, 20);
         frame.getContentPane().add(comboInternacional);
 
@@ -128,7 +128,7 @@ public class VentanaPreferencias {
         frame.getContentPane().add(lblCine);
 
         comboCine = new JComboBox<>();
-        comboCine.setModel(new DefaultComboBoxModel<>(new String[] {"Fotogramas", "FilmAffinity", "Sensacine"}));
+        comboCine.setModel(new DefaultComboBoxModel<>(new String[] {"Fotogramas", "Espinof", "Sensacine"}));
         comboCine.setBounds(150, 320, 250, 20);
         frame.getContentPane().add(comboCine);
 

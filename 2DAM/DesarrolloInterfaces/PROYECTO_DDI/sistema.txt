@@ -1,0 +1,6 @@
+CONFIG;marcosescamilla1304@gmail.com;dfsu catc hjrm wjug;23:17;true
+URLS;El Economista=https://www.eleconomista.es/;Expansión=https://www.expansion.com/;Cinco Días=https://cincodias.elpais.com/;Marca=https://www.marca.com/;As=https://as.com/;Mundo Deportivo=https://www.mundodeportivo.com/;El País=https://elpais.com/;El Mundo=https://www.elmundo.es/;ABC=https://www.abc.es/;The Guardian=https://www.theguardian.com/international;BBC News=https://www.bbc.com/news;Le Monde=https://www.lemonde.fr/;3DJuegos=https://www.3djuegos.com/;Vandal=https://vandal.elespanol.com/;Meristation=https://as.com/meristation/;Fotogramas=https://www.fotogramas.es/;Espinof=https://www.espinof.com/;Sensacine=https://www.sensacine.com/
+HISTORICO;2025-12-11T23:16:34.545699300;Boletín enviado a admin (marcosescamilla1304@gmail.com)
+HISTORICO;2025-12-11T23:16:36.118265200;Boletín enviado a usuario1 (marcosescamilla1304@gmail.com)
+HISTORICO;2025-12-11T23:16:37.852621700;Boletín enviado a usuario2 (user2@gmail.com)
+HISTORICO;2025-12-11T23:16:39.821922600;Boletín enviado a usuario3 (user3@gmail.com)

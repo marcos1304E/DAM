@@ -1,11 +1,19 @@
 package ventanas;
 
 import javax.swing.*;
+
+import datos.GestionCorreo;
+import datos.GestionFicheros;
+import datos.GestionNoticias;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.time.LocalTime;
+
+import modelo.Noticia;
 import modelo.Usuario;
 
 public class MenuPrincipal extends JFrame {
@@ -89,6 +97,93 @@ public class MenuPrincipal extends JFrame {
         // Importante: Refrescar la ventana para que se vean los cambios
         repaint();
         revalidate();
+        
+
+        Thread reloj = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        GestionFicheros gf = new GestionFicheros();
+                        String[] config = gf.leerConfiguracion();
+                        
+                        // config[2] es la HORA (ej: "08:00"), config[3] es "true" (ACTIVO)
+                        if (Boolean.parseBoolean(config[3])) {
+                            
+                            // Obtenemos hora actual HH:mm
+                            String horaActual = LocalTime.now().toString().substring(0, 5); 
+                            
+                            // Si coincide la hora...
+                            if (horaActual.equals(config[2])) {
+                                System.out.println("¡ES LA HORA (" + horaActual + ")! Iniciando envío masivo");
+                                
+                                // 1. Cargamos herramientas
+                                GestionNoticias gestorNoticias = new GestionNoticias();
+                                GestionCorreo gestorCorreo = new GestionCorreo();
+                                java.util.ArrayList<Usuario> listaUsuarios = gf.leerUsuarios();
+                                
+                                // Categorías fijas para el bucle
+                                String[] nombresCategorias = {"Economía", "Deportes", "Nacional", "Internacional", "Videojuegos", "Cine"};
+
+                                // 2. Recorremos TODOS los usuarios
+                                for (Usuario u : listaUsuarios) {
+                                    System.out.println("Procesando usuario: " + u.getNickname());
+                                    
+                                    // Cargamos sus periódicos favoritos
+                                    String[] misFuentes = gf.cargarPreferencias(u);
+                                    StringBuilder resumen = new StringBuilder();
+                                    resumen.append("Hola ").append(u.getNickname()).append(", aquí tienes tu resumen de hoy:\n\n");
+                                    
+                                    // 3. Descargamos sus 6 noticias
+                                    for (int i = 0; i < 6; i++) {
+                                        String fuente = misFuentes[i];
+                                        String categoria = nombresCategorias[i];
+                                        
+                                        if (!fuente.equals("Sin selección")) {
+                                            Noticia n = gestorNoticias.descargarTitular(fuente, categoria);
+                                            resumen.append("--- ").append(categoria.toUpperCase()).append(" ---\n");
+                                            resumen.append("Fuente: ").append(fuente).append("\n");
+                                            resumen.append("Titular: ").append(n.getTitular()).append("\n\n");
+                                        }
+                                    }
+
+                                    try {
+                                        gestorCorreo.enviarNoticia(
+                                            u.getEmail(), 
+                                            "RESUMEN DIARIO", 
+                                            resumen.toString()
+                                        );
+                                        
+                                        // 5. Guardamos en el Histórico
+                                        gf.escribirHistorico("Boletín enviado a " + u.getNickname() + " (" + u.getEmail() + ")");
+                                        System.out.println("Enviado correctamente.");
+                                        
+                                    } catch (Exception ex) {
+                                        System.err.println("Error enviando a " + u.getNickname() + ": " + ex.getMessage());
+                                        gf.escribirHistorico("FALLO envío a " + u.getNickname());
+                                    }
+                                }
+                                
+                                System.out.println("ENVÍO FINALIZADO");
+                                
+                                // IMPORTANTE: Dormir 61 segundos para que no se repita en el mismo minuto
+                                Thread.sleep(61000); 
+                            }
+                        }
+                        
+                        // Comprobamos cada 10 segundos
+                        Thread.sleep(10000); 
+                        
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        reloj.start();
+        
+        
+        
     
     }
 

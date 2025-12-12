@@ -115,7 +115,7 @@ public class Login {
 			return;
 		}
 
-		datos.GestionFicheros gestor = new datos.GestionFicheros();
+		GestionFicheros gestor = new GestionFicheros();
 
 		modelo.Usuario usuarioLogueado = gestor.validarUsuario(user, pass);
 
