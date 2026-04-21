@@ -1,165 +1,155 @@
 package ventanas;
 
-import java.awt.EventQueue;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import java.awt.Font;
-import java.awt.Color;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import modelo.Usuario;
+import datos.GestionFicheros;
 
-public class VentanaPreferencias {
 
-    public JFrame frame; 
-    private Usuario usuario; 
+public class VentanaPreferencias extends JDialog {
 
+    private Usuario usuario;
     private JComboBox<String> comboEconomia;
     private JComboBox<String> comboDeportes;
     private JComboBox<String> comboNacional;
     private JComboBox<String> comboInternacional;
-    private JComboBox<String> comboTecnologia; 
-    private JComboBox<String> comboCine;       
+    private JComboBox<String> comboVideojuegos;
+    private JComboBox<String> comboCine;
 
-
-    
-    
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    Usuario userPrueba = new Usuario("Test", "1234", "test@email.com", false);
-                    VentanaPreferencias window = new VentanaPreferencias(userPrueba);
-                    window.frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
-    /**
-     * Constructor
-     */
-    public VentanaPreferencias(Usuario usuario) {
+    public VentanaPreferencias(JFrame parent, Usuario usuario) {
+        super(parent, true); 
         this.usuario = usuario;
+        
+        setTitle("Preferencias - " + usuario.getNickname());
+        setBounds(100, 100, 500, 450);
+        setLocationRelativeTo(parent);
+        getContentPane().setLayout(null);
+        
+        
+        try {
+            setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagenes/logo.png")));
+        } catch (Exception e) {}
+
         initialize();
+        cargarDatosActuales();
     }
 
-    /**
-     * Inicializar contenidos
-     */
     private void initialize() {
-        frame = new JFrame();
-        frame.setBounds(100, 100, 500, 600);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.getContentPane().setLayout(null);
-        frame.setLocationRelativeTo(null); 
-        frame.setTitle("Configuración de Noticias - " + usuario.getNickname());
+        JLabel lblTitulo = new JLabel("ELIGE TUS FUENTES FAVORITAS");
+        lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lblTitulo.setBounds(120, 20, 300, 20);
+        getContentPane().add(lblTitulo);
 
-
-        JLabel lblTitulo = new JLabel("SELECCIONA TUS FUENTES");
-        lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 16));
-        lblTitulo.setBounds(130, 20, 300, 20);
-        frame.getContentPane().add(lblTitulo);
-
-
-        JLabel lblEconomia = new JLabel("Economía:");
-        lblEconomia.setFont(new Font("Tahoma", Font.BOLD, 12));
-        lblEconomia.setBounds(40, 70, 100, 20);
-        frame.getContentPane().add(lblEconomia);
+        
+        JLabel lblEco = new JLabel("Economía:");
+        lblEco.setBounds(50, 70, 100, 14);
+        getContentPane().add(lblEco);
 
         comboEconomia = new JComboBox<>();
         comboEconomia.setModel(new DefaultComboBoxModel<>(new String[] {"El Economista", "Expansión", "Cinco Días"}));
         comboEconomia.setBounds(150, 70, 250, 20);
-        frame.getContentPane().add(comboEconomia);
+        getContentPane().add(comboEconomia);
 
-        JLabel lblDeportes = new JLabel("Deportes:");
-        lblDeportes.setFont(new Font("Tahoma", Font.BOLD, 12));
-        lblDeportes.setBounds(40, 120, 100, 20);
-        frame.getContentPane().add(lblDeportes);
+        
+        JLabel lblDep = new JLabel("Deportes:");
+        lblDep.setBounds(50, 120, 100, 14);
+        getContentPane().add(lblDep);
 
         comboDeportes = new JComboBox<>();
         comboDeportes.setModel(new DefaultComboBoxModel<>(new String[] {"Marca", "As", "Mundo Deportivo"}));
         comboDeportes.setBounds(150, 120, 250, 20);
-        frame.getContentPane().add(comboDeportes);
-
-
-        JLabel lblNacional = new JLabel("Nacional:");
-        lblNacional.setFont(new Font("Tahoma", Font.BOLD, 12));
-        lblNacional.setBounds(40, 170, 100, 20);
-        frame.getContentPane().add(lblNacional);
+        getContentPane().add(comboDeportes);
+        
+        
+        JLabel lblNac = new JLabel("Nacional:");
+        lblNac.setBounds(50, 170, 100, 14);
+        getContentPane().add(lblNac);
 
         comboNacional = new JComboBox<>();
         comboNacional.setModel(new DefaultComboBoxModel<>(new String[] {"El País", "El Mundo", "ABC"}));
         comboNacional.setBounds(150, 170, 250, 20);
-        frame.getContentPane().add(comboNacional);
-
-
-        JLabel lblInternacional = new JLabel("Internacional:");
-        lblInternacional.setFont(new Font("Tahoma", Font.BOLD, 12));
-        lblInternacional.setBounds(40, 220, 100, 20);
-        frame.getContentPane().add(lblInternacional);
+        getContentPane().add(comboNacional);
+        
+        
+        JLabel lblInter = new JLabel("Internacional:");
+        lblInter.setBounds(50, 220, 100, 14);
+        getContentPane().add(lblInter);
 
         comboInternacional = new JComboBox<>();
         comboInternacional.setModel(new DefaultComboBoxModel<>(new String[] {"The Guardian", "BBC News", "Le Monde"}));
         comboInternacional.setBounds(150, 220, 250, 20);
-        frame.getContentPane().add(comboInternacional);
+        getContentPane().add(comboInternacional);
+        
+        
+        JLabel lblJuegos = new JLabel("Videojuegos:");
+        lblJuegos.setBounds(50, 270, 100, 14);
+        getContentPane().add(lblJuegos);
 
-
-        JLabel lblTecnologia = new JLabel("Videojuegos:");
-        lblTecnologia.setFont(new Font("Tahoma", Font.BOLD, 12));
-        lblTecnologia.setBounds(40, 270, 100, 20);
-        frame.getContentPane().add(lblTecnologia);
-
-        comboTecnologia = new JComboBox<>();
-        comboTecnologia.setModel(new DefaultComboBoxModel<>(new String[] {"3DJuegos", "Vandal", "Meristation"}));
-        comboTecnologia.setBounds(150, 270, 250, 20);
-        frame.getContentPane().add(comboTecnologia);
-
-
-        JLabel lblCine = new JLabel("Cine y Series:");
-        lblCine.setFont(new Font("Tahoma", Font.BOLD, 12));
-        lblCine.setBounds(40, 320, 100, 20);
-        frame.getContentPane().add(lblCine);
+        comboVideojuegos = new JComboBox<>();
+        comboVideojuegos.setModel(new DefaultComboBoxModel<>(new String[] {"3DJuegos", "IGN España", "Meristation"}));
+        comboVideojuegos.setBounds(150, 270, 250, 20);
+        getContentPane().add(comboVideojuegos);
+        
+        
+        JLabel lblCine = new JLabel("Cine:");
+        lblCine.setBounds(50, 320, 100, 14);
+        getContentPane().add(lblCine);
 
         comboCine = new JComboBox<>();
         comboCine.setModel(new DefaultComboBoxModel<>(new String[] {"Fotogramas", "Espinof", "Sensacine"}));
         comboCine.setBounds(150, 320, 250, 20);
-        frame.getContentPane().add(comboCine);
+        getContentPane().add(comboCine);
 
+        
+        JButton btnGuardar = new JButton("GUARDAR CAMBIOS");
+        btnGuardar.setBounds(150, 360, 200, 30);
+        getContentPane().add(btnGuardar);
 
-        JButton botonGuardar = new JButton("GUARDAR PREFERENCIAS");
-        botonGuardar.addActionListener(new ActionListener() {
+        btnGuardar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                guardarDatos();
+                guardarPreferencias();
             }
         });
-        botonGuardar.setForeground(Color.WHITE);
-        botonGuardar.setBackground(new Color(0, 128, 0));
-        botonGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-        botonGuardar.setBounds(100, 400, 300, 40);
-        frame.getContentPane().add(botonGuardar);
     }
     
-    private void guardarDatos() {
-    	//todo lo que el user ha elegido
-    	String eco = (String) comboEconomia.getSelectedItem();
-        String dep = (String) comboDeportes.getSelectedItem();
-        String nac = (String) comboNacional.getSelectedItem();
-        String inter = (String) comboInternacional.getSelectedItem();
-        String tec = (String) comboTecnologia.getSelectedItem();
-        String cine = (String) comboCine.getSelectedItem();
-
-        //lo guardamos en el txt
-        datos.GestionFicheros gestor = new datos.GestionFicheros();
-        gestor.guardarPreferencias(usuario, eco, dep, nac, inter, tec, cine);
+    private void cargarDatosActuales() {
+        GestionFicheros gestor = new GestionFicheros();
+        String[] guardadas = gestor.cargarPreferencias(usuario);
         
-        JOptionPane.showMessageDialog(frame, "Preferencias guardadas correctamente.");
-        frame.dispose();
+        if (guardadas != null && guardadas[0] != null) {
+            comboEconomia.setSelectedItem(guardadas[0]);
+            comboDeportes.setSelectedItem(guardadas[1]);
+            comboNacional.setSelectedItem(guardadas[2]);
+            comboInternacional.setSelectedItem(guardadas[3]);
+            comboVideojuegos.setSelectedItem(guardadas[4]);
+            comboCine.setSelectedItem(guardadas[5]);
+        }
+    }
+    
+    private void guardarPreferencias() {
+        GestionFicheros gestor = new GestionFicheros();
+        gestor.guardarPreferencias(
+            usuario,
+            (String) comboEconomia.getSelectedItem(),
+            (String) comboDeportes.getSelectedItem(),
+            (String) comboNacional.getSelectedItem(),
+            (String) comboInternacional.getSelectedItem(),
+            (String) comboVideojuegos.getSelectedItem(),
+            (String) comboCine.getSelectedItem()
+        );
+        
+        JOptionPane.showMessageDialog(this, "Preferencias guardadas correctamente.");
+        dispose(); 
     }
 }

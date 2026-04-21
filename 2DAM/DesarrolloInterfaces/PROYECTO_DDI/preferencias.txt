@@ -1,2 +1,0 @@
-usuario2;Cinco Días;Mundo Deportivo;El Mundo;BBC News;Vandal;Sensacine
-usuario1;El Economista;Marca;El País;The Guardian;3DJuegos;Fotogramas

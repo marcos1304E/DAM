@@ -7,73 +7,32 @@ import modelo.Usuario;
 public class GestionFicheros {
 
     private final String FICHERO_USUARIOS = "usuarios.txt";
-    private final String FICHERO_PREFERENCIAS = "preferencias.txt";
-    private final String FICHERO_SISTEMA = "sistema.txt"; // CONFIGURACIÓN + HISTÓRICO
+    private final String FICHERO_SISTEMA = "sistema.txt";
+    private final String FICHERO_HISTORICO = "historico.txt";
 
-    // ========================================================================
-    // SECCIÓN 1: CONFIGURACIÓN Y HISTÓRICO (EL TERCER FICHERO)
-    // ========================================================================
-
-    // Devuelve un array: [0]=Email, [1]=Pass, [2]=HoraEnvio, [3]=Activo(true/false)
-    public String[] leerConfiguracion() {
-        String[] config = new String[4];
-        // Valores por defecto (Puestos por ti, el desarrollador)
-        config[0] = "marcosescamilla1304@gmail.com";
-        config[1] = "dfsu catc hjrm wjug";
-        config[2] = "08:00"; // Hora por defecto
-        config[3] = "false"; // Envío automático desactivado por defecto
-
-        File archivo = new File(FICHERO_SISTEMA);
-        if (!archivo.exists()) return config;
-
-        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                // Solo leemos las líneas que empiezan por CONFIG;
-                if (linea.startsWith("CONFIG;")) {
-                    String[] partes = linea.split(";");
-                    // Formato: CONFIG;Email;Pass;Hora;Activo
-                    if (partes.length >= 5) {
-                        config[0] = partes[1];
-                        config[1] = partes[2];
-                        config[2] = partes[3];
-                        config[3] = partes[4];
-                    }
-                    break; // Solo hay una línea de configuración
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return config;
-    }
+    
+    
 
     public void guardarConfiguracion(String email, String pass, String hora, boolean activo) {
-        // 1. Leemos el histórico existente para no perderlo
-        ArrayList<String> historico = new ArrayList<>();
-        File archivo = new File(FICHERO_SISTEMA);
+        ArrayList<String> lineasPreferencias = new ArrayList<>();
         
+        File archivo = new File(FICHERO_SISTEMA);
         if (archivo.exists()) {
             try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
                 String linea;
                 while ((linea = br.readLine()) != null) {
-                    // Guardamos todo lo que NO sea configuración ni URLs (es decir, el histórico)
-                    if (!linea.startsWith("CONFIG;") && !linea.startsWith("URLS;")) {
-                        historico.add(linea);
+                    if (linea.startsWith("PREF;")) {
+                        lineasPreferencias.add(linea);
                     }
                 }
             } catch (Exception e) { e.printStackTrace(); }
         }
 
-        // 2. Sobrescribimos el fichero
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivo))) {
             
-            // LÍNEA 1: CONFIGURACIÓN GENERAL
             bw.write("CONFIG;" + email + ";" + pass + ";" + hora + ";" + activo);
             bw.newLine();
             
-            // LÍNEA 2: TODAS LAS URLS DEL SISTEMA (LAS 18)
-            // Esto cumple el requisito de tener las URLs en el TXT
             String todasLasUrls = "URLS;" +
                 "El Economista=https://www.eleconomista.es/;" +
                 "Expansión=https://www.expansion.com/;" +
@@ -88,7 +47,7 @@ public class GestionFicheros {
                 "BBC News=https://www.bbc.com/news;" +
                 "Le Monde=https://www.lemonde.fr/;" +
                 "3DJuegos=https://www.3djuegos.com/;" +
-                "Vandal=https://vandal.elespanol.com/;" +
+                "IGN España=https://es.ign.com/;" +
                 "Meristation=https://as.com/meristation/;" +
                 "Fotogramas=https://www.fotogramas.es/;" +
                 "Espinof=https://www.espinof.com/;" +
@@ -97,19 +56,114 @@ public class GestionFicheros {
             bw.write(todasLasUrls);
             bw.newLine();
 
-            // LÍNEA 3 EN ADELANTE: EL HISTÓRICO RECUPERADO
-            for (String h : historico) {
-                bw.write(h);
+            for (String pref : lineasPreferencias) {
+                bw.write(pref);
                 bw.newLine();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+        } catch (Exception e) { e.printStackTrace(); }
     }
 
-    // Método para añadir una línea al histórico
+    public String[] leerConfiguracion() {
+        String[] config = new String[4];
+        config[0] = "marcosescamilla1304@gmail.com";
+        config[1] = "dfsu catc hjrm wjug";
+        config[2] = "08:00"; 
+        config[3] = "false"; 
+
+        File archivo = new File(FICHERO_SISTEMA);
+        if (!archivo.exists()) return config;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                if (linea.startsWith("CONFIG;")) {
+                    String[] partes = linea.split(";");
+                    if (partes.length >= 5) {
+                        config[0] = partes[1];
+                        config[1] = partes[2];
+                        config[2] = partes[3];
+                        config[3] = partes[4];
+                    }
+                    break; 
+                }
+            }
+        } catch (Exception e) { e.printStackTrace(); }
+        return config;
+    }
+
+    public void guardarPreferencias(Usuario u, String eco, String dep, String nac, String inter, String tec, String cine) {
+        ArrayList<String> todoElFichero = new ArrayList<>();
+        File archivo = new File(FICHERO_SISTEMA);
+        
+        if (archivo.exists()) {
+            try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+                String linea;
+                while ((linea = br.readLine()) != null) {
+                    if (linea.startsWith("CONFIG;") || linea.startsWith("URLS;")) {
+                        todoElFichero.add(linea);
+                    } 
+                    else if (linea.startsWith("PREF;") && !linea.startsWith("PREF;" + u.getNickname() + ";")) {
+                        todoElFichero.add(linea);
+                    }
+                }
+            } catch (Exception e) { e.printStackTrace(); }
+        }
+
+        String nuevaPref = "PREF;" + u.getNickname() + ";" + eco + ";" + dep + ";" + nac + ";" + inter + ";" + tec + ";" + cine;
+        todoElFichero.add(nuevaPref);
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivo))) {
+            for (String l : todoElFichero) {
+                bw.write(l);
+                bw.newLine();
+            }
+        } catch (Exception e) { e.printStackTrace(); }
+    }
+
+    public String[] cargarPreferencias(Usuario u) {
+        // Inicializamos con "Sin selección" por seguridad
+        String[] fuentes = {"Sin selección", "Sin selección", "Sin selección", "Sin selección", "Sin selección", "Sin selección"};
+        
+        File archivo = new File(FICHERO_SISTEMA); 
+        if (!archivo.exists()) return fuentes;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                if (linea.startsWith("PREF;" + u.getNickname() + ";")) {
+                    String[] partes = linea.split(";");
+                    for(int i=0; i<6; i++) {
+                        if (i+2 < partes.length) {
+                            fuentes[i] = partes[i+2];
+                        }
+                    }
+                    return fuentes;
+                }
+            }
+        } catch (Exception e) { e.printStackTrace(); }
+        return fuentes;
+    }
+
+    public boolean tienePreferencias(Usuario u) {
+        File archivo = new File(FICHERO_SISTEMA);
+        if (!archivo.exists()) return false;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                if (linea.startsWith("PREF;" + u.getNickname() + ";")) {
+                    return true;
+                }
+            }
+        } catch (Exception e) { e.printStackTrace(); }
+        return false;
+    }
+
+    
+
     public void escribirHistorico(String mensaje) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FICHERO_SISTEMA, true))) { // true = añadir al final
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FICHERO_HISTORICO, true))) { 
             bw.write("HISTORICO;" + java.time.LocalDateTime.now() + ";" + mensaje);
             bw.newLine();
         } catch (Exception e) {
@@ -117,9 +171,31 @@ public class GestionFicheros {
         }
     }
 
-    // ========================================================================
-    // SECCIÓN 2: USUARIOS (LOGIN Y GESTIÓN) - IGUAL QUE ANTES
-    // ========================================================================
+    public ArrayList<String> leerHistoricoUsuario(Usuario u) {
+        ArrayList<String> historial = new ArrayList<>();
+        File archivo = new File(FICHERO_HISTORICO);
+
+        if (!archivo.exists()) return historial;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(";");
+                if (partes.length >= 3) {
+                    String mensaje = partes[2];
+                    if (mensaje.contains(u.getNickname())) {
+                        String fechaBonita = partes[1].replace("T", " ").substring(0, 19);
+                        historial.add("[" + fechaBonita + "] " + mensaje);
+                    }
+                }
+            }
+        } catch (Exception e) { e.printStackTrace(); }
+        return historial;
+    }
+
+
+
+    
     public Usuario validarUsuario(String nick, String pass) {
         ArrayList<Usuario> lista = leerUsuarios();
         for (Usuario u : lista) {
@@ -157,42 +233,5 @@ public class GestionFicheros {
                 bw.newLine();
             }
         } catch (Exception e) { e.printStackTrace(); }
-    }
-
-    // ========================================================================
-    // SECCIÓN 3: PREFERENCIAS - IGUAL QUE ANTES
-    // ========================================================================
-    public void guardarPreferencias(Usuario u, String eco, String dep, String nac, String inter, String tec, String cine) {
-        ArrayList<String> lineas = new ArrayList<>();
-        File archivo = new File(FICHERO_PREFERENCIAS);
-        if (archivo.exists()) {
-            try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-                String linea;
-                while ((linea = br.readLine()) != null) {
-                    if (!linea.startsWith(u.getNickname() + ";")) lineas.add(linea);
-                }
-            } catch (Exception e) { e.printStackTrace(); }
-        }
-        lineas.add(u.getNickname() + ";" + eco + ";" + dep + ";" + nac + ";" + inter + ";" + tec + ";" + cine);
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FICHERO_PREFERENCIAS))) {
-            for (String l : lineas) { bw.write(l); bw.newLine(); }
-        } catch (Exception e) { e.printStackTrace(); }
-    }
-
-    public String[] cargarPreferencias(Usuario u) {
-        String[] fuentes = {"El Economista", "Marca", "El País", "The Guardian", "3DJuegos", "Fotogramas"};
-        File archivo = new File(FICHERO_PREFERENCIAS);
-        if (!archivo.exists()) return fuentes;
-        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                if (linea.startsWith(u.getNickname() + ";")) {
-                    String[] partes = linea.split(";");
-                    for(int i=0; i<6; i++) fuentes[i] = (i+1 < partes.length) ? partes[i+1] : "Sin selección";
-                    return fuentes;
-                }
-            }
-        } catch (Exception e) { e.printStackTrace(); }
-        return fuentes;
     }
 }

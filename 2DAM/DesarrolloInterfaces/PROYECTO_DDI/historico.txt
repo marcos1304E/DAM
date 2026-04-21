@@ -1,0 +1,165 @@
+HISTORICO;2025-12-12T20:31:10.479238300;Boletín enviado a admin (marcosescamilla1304@gmail.com)
+HISTORICO;2025-12-12T20:31:13.887684300;Boletín enviado a usuario1 (user1@gmail.com)
+HISTORICO;2025-12-12T20:31:15.819456300;Boletín enviado a usuario2 (user2@gmail.com)
+HISTORICO;2025-12-12T20:31:17.254589;Boletín enviado a usuario3 (user3@gmail.com)
+HISTORICO;2025-12-12T20:36:28.774017100;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T20:36:29.809140100;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T20:36:29.915145100;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T20:36:29.981139500;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T20:36:30.045138500;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T20:36:30.110142700;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T20:36:30.210143200;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T20:36:47.849218400;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T20:36:47.895786300;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T20:36:47.955786200;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T20:36:47.993786700;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T20:36:48.028791300;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T20:36:48.064785500;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T20:36:48.183822100;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T20:36:49.853735700;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T20:36:49.894324600;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T20:36:49.946084500;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T20:36:49.985012300;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T20:36:50.021013300;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T20:36:50.057013;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T20:36:50.127046800;Usuario usuario1 vio en Espinof: El creador de 'Pluribus' explica por qué la protagonista de la serie es escritora: "Si piensas en alguien que salva el mundo, ves un Liam Neeson o un Tom Cruise"
+HISTORICO;2025-12-12T20:37:06.342904900;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T20:37:06.390285200;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T20:37:06.445286200;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T20:37:06.484256300;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T20:37:06.534257600;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T20:37:06.600256700;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T20:37:06.686259;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T20:46:53.850755100;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T20:46:54.929961300;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T20:46:55.061960;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T20:46:55.138959600;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T20:46:55.193960200;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T20:46:55.283959900;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T20:46:55.423967500;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T20:47:00.599749600;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T20:47:00.645539600;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T20:47:00.712540900;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T20:47:00.747540;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T20:47:00.788540;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T20:47:00.820539;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T20:47:00.917539900;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T20:57:46.891727600;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T20:57:48.079012400;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T20:57:48.714085500;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T20:57:49.544695100;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T20:57:50.270774600;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T20:57:50.886091200;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T20:57:51.489415;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T21:07:21.413456;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T21:07:22.638182800;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T21:07:22.935918200;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T21:07:23.185715900;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T21:07:23.587508100;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T21:07:24.136800500;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T21:07:24.451451;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T21:10:56.754861;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T21:10:57.776752800;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T21:10:57.897753800;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T21:10:57.956752900;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T21:10:58.013752800;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T21:10:58.083754;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T21:10:58.192753900;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T21:24:33.596105500;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T21:24:34.633173100;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T21:24:34.738174800;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T21:24:34.802173800;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T21:24:34.858173600;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T21:24:34.965174500;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T21:24:35.067174800;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T21:28:07.016923300;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T21:28:08.123591500;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T21:28:08.338444400;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T21:28:08.637319800;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T21:28:08.738320800;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T21:28:08.810320500;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T21:28:09.004320400;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T21:44:53.314462900;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T21:44:54.406034100;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T21:44:54.578021600;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T21:44:54.698030500;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T21:44:54.794025;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T21:44:54.939022500;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T21:44:55.140027;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T21:44:57.584706500;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T21:44:57.628834800;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T21:44:57.686357;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T21:44:57.727355200;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T21:44:57.778357;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T21:44:57.821356100;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T21:44:57.921527;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T21:45:02.493754200;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T21:45:02.535196900;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T21:45:02.608032200;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T21:45:02.644782700;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T21:45:02.692782800;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T21:45:02.727782700;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T21:45:02.798782900;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T21:45:05.179214800;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T21:45:05.219846300;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T21:45:05.302131900;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T21:45:05.336131;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T21:45:05.378133900;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T21:45:05.435132400;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T21:45:05.548634800;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T22:26:49.691643100;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T22:26:49.738881800;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T22:26:49.810881600;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T22:26:49.848879900;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T22:26:49.896881900;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T22:26:49.928887800;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T22:26:50.035883600;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T22:27:33.443786800;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T22:27:34.495999200;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T22:27:34.624000900;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T22:27:34.694001400;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T22:27:34.769007400;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T22:27:34.835003600;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T22:27:34.951999400;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-12T22:27:38.390348;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-12T22:27:38.440633300;Usuario usuario1 vio en Expansión: BBVA refuerza su alianza con OpenAI para impulsar el despliegue de la IA en el banco
+HISTORICO;2025-12-12T22:27:38.500632400;Usuario usuario1 vio en As: LALIGA EA Sports
+HISTORICO;2025-12-12T22:27:38.544634600;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-12T22:27:38.584633900;Usuario usuario1 vio en BBC News: EU backs indefinite freeze on Russia's frozen cash ahead of loan plan for Ukraine
+HISTORICO;2025-12-12T22:27:38.630633100;Usuario usuario1 vio en Vandal: NOTICIAS DESTACADAS
+HISTORICO;2025-12-12T22:27:38.742633300;Usuario usuario1 vio en Espinof: Zendaya y Robert Pattinson protagonizan una retorcida historia de amor en la nueva película producida por Ari Aster
+HISTORICO;2025-12-13T00:03:07.700590;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-13T00:03:08.849676200;Usuario usuario1 vio en El Economista: La deuda mundial asume el fin del ciclo de recortes de tipos y vuelve a niveles que no visitaba desde 2009
+HISTORICO;2025-12-13T00:03:08.990676600;Usuario usuario1 vio en Marca: Una defensa sin tiempo para conocerse
+HISTORICO;2025-12-13T00:03:09.085676600;Usuario usuario1 vio en El País: Yolanda Díaz exige a Pedro Sánchez una “remodelación profunda” en el Gobierno: “No podemos aguantar así”
+HISTORICO;2025-12-13T00:03:09.220676800;Usuario usuario1 vio en The Guardian: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T00:03:09.330678400;Usuario usuario1 vio en 3DJuegos: Si te gusta el buen cine de terror conocerás su nombre. El maestro de La Cosa ha hecho su propio Left 4 Dead y con solo 3 horas a mí me ha ganado
+HISTORICO;2025-12-13T00:03:09.427676100;Usuario usuario1 vio en Fotogramas: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T00:04:02.779100400;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-13T00:04:03.299054800;Usuario usuario1 vio en El Economista: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T00:04:03.308064600;Usuario usuario1 vio en Marca: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T00:04:03.317057100;Usuario usuario1 vio en El Mundo: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T00:04:03.326054400;Usuario usuario1 vio en The Guardian: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T00:04:03.335077800;Usuario usuario1 vio en 3DJuegos: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T00:04:03.345053700;Usuario usuario1 vio en Fotogramas: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T00:26:52.929402100;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-13T00:26:54.121142;Usuario usuario1 vio en El Economista: La deuda mundial asume el fin del ciclo de recortes de tipos y vuelve a niveles que no visitaba desde 2009
+HISTORICO;2025-12-13T00:26:54.447819400;Usuario usuario1 vio en Marca: Un nuevo reajuste... que será inédito
+HISTORICO;2025-12-13T00:26:54.729819200;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-13T00:26:55.121624300;Usuario usuario1 vio en The Guardian: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T00:26:55.527202600;Usuario usuario1 vio en 3DJuegos: Si te gusta el buen cine de terror conocerás su nombre. El maestro de La Cosa ha hecho su propio Left 4 Dead y con solo 3 horas a mí me ha ganado
+HISTORICO;2025-12-13T00:26:56.690428600;Usuario usuario1 vio en Fotogramas: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T01:47:32.182100300;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-13T01:47:33.341041400;Usuario usuario1 vio en El Economista: La deuda mundial asume el fin del ciclo de recortes de tipos y vuelve a niveles que no visitaba desde 2009
+HISTORICO;2025-12-13T01:47:33.876661400;Usuario usuario1 vio en Marca: Un reajuste inédito
+HISTORICO;2025-12-13T01:47:34.571503100;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-13T01:47:40.781521100;Usuario usuario1 vio en The Guardian: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T01:47:41.634312500;Usuario usuario1 vio en 3DJuegos: Si te gusta el buen cine de terror conocerás su nombre. El maestro de La Cosa ha hecho su propio Left 4 Dead y con solo 3 horas a mí me ha ganado
+HISTORICO;2025-12-13T01:47:41.719010600;Usuario usuario1 vio en Fotogramas: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T01:48:09.006905900;Usuario usuario1 accedió al panel de noticias.
+HISTORICO;2025-12-13T01:48:09.104166900;Usuario usuario1 vio en El Economista: La deuda mundial asume el fin del ciclo de recortes de tipos y vuelve a niveles que no visitaba desde 2009
+HISTORICO;2025-12-13T01:48:09.171163300;Usuario usuario1 vio en Marca: Un reajuste inédito
+HISTORICO;2025-12-13T01:48:09.220164300;Usuario usuario1 vio en El Mundo: El Gobierno de los escándalos
+HISTORICO;2025-12-13T01:48:09.322164;Usuario usuario1 vio en The Guardian: No se ha podido descargar el contenido. Conéctese a Internet.
+HISTORICO;2025-12-13T01:48:09.783075900;Usuario usuario1 vio en 3DJuegos: Si te gusta el buen cine de terror conocerás su nombre. El maestro de La Cosa ha hecho su propio Left 4 Dead y con solo 3 horas a mí me ha ganado
+HISTORICO;2025-12-13T01:48:09.952626300;Usuario usuario1 vio en Fotogramas: No se ha podido descargar el contenido. Conéctese a Internet.

@@ -1,16 +1,7 @@
 package ventanas;
 
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.SwingUtilities;
-import javax.swing.JDialog;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JProgressBar;
-import java.awt.Color;
-import java.awt.Font;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -22,117 +13,144 @@ import datos.GestionNoticias;
 public class PanelAdmin extends JPanel {
 
     private Usuario admin;
-
-    // Arrays con TODAS las fuentes del sistema (6 categorías x 3 fuentes = 18 total)
+    
     private final String[] CATEGORIAS = {
         "Economía", "Deportes", "Nacional", "Internacional", "Videojuegos", "Cine"
     };
     
     private final String[][] FUENTES = {
-        {"El Economista", "Expansión", "Cinco Días"},  // Economía
-        {"Marca", "As", "Mundo Deportivo"},            // Deportes
-        {"El País", "El Mundo", "ABC"},                // Nacional
-        {"The Guardian", "BBC News", "Le Monde"},               // Internacional
-        {"3DJuegos", "Vandal", "Meristation"},         // Videojuegos
-        {"Fotogramas", "Espinof", "Sensacine"}    // Cine
+        {"El Economista", "Expansión", "Cinco Días"},
+        {"Marca", "As", "Mundo Deportivo"},
+        {"El País", "El Mundo", "ABC"},
+        {"The Guardian", "BBC News", "Le Monde"}, 
+        {"3DJuegos", "IGN España", "Meristation"},
+        {"Fotogramas", "Espinof", "Sensacine"}    
     };
+
+    private final Color COLOR_BOTONES = new Color(52, 73, 94); 
 
     public PanelAdmin(Usuario admin) {
         this.admin = admin;
+        setLayout(null);
+        setBackground(MenuPrincipal.COLOR_FONDO);
+        setBounds(0, 0, 800, 600);
         initialize();
     }
 
     private void initialize() {
-        setLayout(null);
-        setBounds(0, 0, 800, 500);
-
-        JLabel textoRol = new JLabel("PANEL DE ADMINISTRADOR");
-        textoRol.setForeground(Color.RED);
-        textoRol.setFont(new Font("Tahoma", Font.BOLD, 14));
-        textoRol.setBounds(50, 30, 300, 20);
+        JLabel textoRol = new JLabel("PANEL DE ADMINISTRACIÓN");
+        textoRol.setHorizontalAlignment(SwingConstants.CENTER);
+        textoRol.setForeground(new Color(192, 57, 43));
+        textoRol.setFont(MenuPrincipal.FUENTE_TITULO);
+        textoRol.setBounds(0, 40, 800, 30);
         add(textoRol);
+        
+        JLabel lblUser = new JLabel("Sesión iniciada como: " + admin.getNickname(), SwingConstants.CENTER);
+        lblUser.setFont(MenuPrincipal.FUENTE_TEXTO);
+        lblUser.setForeground(Color.GRAY);
+        lblUser.setBounds(0, 75, 800, 20);
+        add(lblUser);
 
-        JButton botonGestionUsuarios = new JButton("Gestión Usuarios");
-        botonGestionUsuarios.setBounds(50, 80, 200, 40);
-        add(botonGestionUsuarios);
-        botonGestionUsuarios.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    VentanaGestionUsuarios ventanaGestion = new VentanaGestionUsuarios();
-                    ventanaGestion.setVisible(true);
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
         
-        
+        int x = 250;
+        int width = 300;
+        int height = 55; 
+        int gap = 25;    
+        int startY = 140;
 
-        JButton botonTest = new JButton("Test Completo (18 Noticias)");
-        botonTest.setBounds(50, 140, 250, 40); // Un poco más ancho
-        add(botonTest);
+        JButton btnUsuarios = new JButton("GESTIÓN DE USUARIOS");
+        btnUsuarios.setBounds(x, startY, width, height);
+        estilizarBoton(btnUsuarios); 
+        add(btnUsuarios);
 
-        botonTest.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                // Al pulsar, abrimos la ventana de visualización del test
-                abrirVentanaTest();
-            }
+        JButton btnTest = new JButton("TEST DE SISTEMA (18 FUENTES)");
+        btnTest.setBounds(x, startY + height + gap, width, height);
+        estilizarBoton(btnTest); 
+        add(btnTest);
+
+        JButton btnConfig = new JButton("CONFIGURACIÓN TÉCNICA");
+        btnConfig.setBounds(x, startY + (height + gap) * 2, width, height);
+        estilizarBoton(btnConfig); 
+        add(btnConfig);
+
+
+        btnUsuarios.addActionListener(e -> {
+            JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(this);
+            new VentanaGestionUsuarios(parent).setVisible(true);
         });
-        
-        JButton botonConfig = new JButton("Configuración Sistema");
-        botonConfig.setBounds(50, 200, 250, 40); // Debajo de los otros
-        add(botonConfig);
-        
-        botonConfig.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new VentanaConfig().setVisible(true);
-            }
+
+        btnTest.addActionListener(e -> {
+            JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(this);
+            abrirVentanaTest(parent);
         });
-        
+
+        btnConfig.addActionListener(e -> {
+            JFrame parent = (JFrame) SwingUtilities.getWindowAncestor(this);
+            new VentanaConfig(parent).setVisible(true);
+        });
     }
 
-    /**
-     * Método que abre un diálogo modal para ver la descarga en tiempo real
-     */
-    private void abrirVentanaTest() {
-        // Creamos un JDialog (ventana flotante)
-        JDialog dialogoTest = new JDialog();
-        dialogoTest.setTitle("Test de Sistema - Descargando 18 fuentes...");
-        dialogoTest.setBounds(100, 100, 600, 500);
-        dialogoTest.setLayout(null);
-        dialogoTest.setLocationRelativeTo(this); // Centrado
-        dialogoTest.setModal(true); // Bloquea la ventana de atrás
+    private void estilizarBoton(JButton btn) {
+        btn.setBackground(COLOR_BOTONES);
+        btn.setForeground(Color.WHITE);
+        btn.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btn.setFocusPainted(false);
+        btn.setBorderPainted(false);
+        btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }
 
-        // Área de texto para visualizar las noticias
+    
+    private void abrirVentanaTest(JFrame parent) {
+        JDialog dialogoTest = new JDialog(parent, "Diagnóstico del Sistema", true);
+        dialogoTest.setBounds(100, 100, 650, 550);
+        dialogoTest.setLayout(null);
+        dialogoTest.setLocationRelativeTo(parent);
+        dialogoTest.getContentPane().setBackground(Color.WHITE);
+        
+        try {
+            dialogoTest.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagenes/logo.png")));
+        } catch (Exception e) {}
+
+        JLabel lblTituloTest = new JLabel("TEST DE CONECTIVIDAD Y SCRAPING");
+        lblTituloTest.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        lblTituloTest.setBounds(20, 15, 400, 20);
+        dialogoTest.add(lblTituloTest);
+
         JTextArea areaLog = new JTextArea();
         areaLog.setEditable(false);
+        areaLog.setFont(new Font("Consolas", Font.PLAIN, 12));
+        areaLog.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        
         JScrollPane scroll = new JScrollPane(areaLog);
-        scroll.setBounds(20, 20, 540, 350);
+        scroll.setBounds(20, 50, 590, 380);
+        scroll.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
         dialogoTest.add(scroll);
 
-        // Barra de progreso
         JProgressBar barra = new JProgressBar(0, 18);
         barra.setStringPainted(true);
-        barra.setBounds(20, 380, 400, 25);
+        barra.setForeground(new Color(46, 204, 113)); 
+        barra.setBounds(20, 450, 400, 30);
         dialogoTest.add(barra);
 
-        // Botón enviar email (Deshabilitado al principio)
-        JButton btnEnviarEmail = new JButton("Enviar Informe");
-        btnEnviarEmail.setBounds(430, 380, 130, 25);
+        JButton btnEnviarEmail = new JButton("ENVIAR INFORME");
+        btnEnviarEmail.setBounds(440, 450, 170, 30);
+        btnEnviarEmail.setBackground(new Color(230, 126, 34));
+        btnEnviarEmail.setForeground(Color.WHITE);
+        btnEnviarEmail.setFont(new Font("Segoe UI", Font.BOLD, 12));
         btnEnviarEmail.setEnabled(false);
         dialogoTest.add(btnEnviarEmail);
 
-        // --- LÓGICA DEL HILO DE DESCARGA ---
+
         Thread hilo = new Thread(new Runnable() {
             @Override
             public void run() {
                 GestionNoticias gestor = new GestionNoticias();
-                StringBuilder informeCompleto = new StringBuilder(); // Para guardar todo el texto
+                StringBuilder informeCompleto = new StringBuilder(); 
                 int contador = 0;
 
-                areaLog.append("INICIANDO TEST DE CONEXIÓN CON LAS 18 FUENTES\n\n");
+                areaLog.append("INICIANDO TEST DE CONEXIÓN\n");
+                areaLog.append("Hora de inicio: " + java.time.LocalTime.now() + "\n\n");
 
-                // Doble bucle: Recorremos categorías y sus fuentes
                 for (int i = 0; i < CATEGORIAS.length; i++) {
                     String cat = CATEGORIAS[i];
                     areaLog.append("CATEGORÍA: " + cat.toUpperCase() + "\n");
@@ -140,70 +158,47 @@ public class PanelAdmin extends JPanel {
 
                     for (int j = 0; j < FUENTES[i].length; j++) {
                         String fuente = FUENTES[i][j];
-                        
                         try {
-                            // Descargamos
                             Noticia n = gestor.descargarTitular(fuente, cat);
-                            
-                            // Visualizamos
-                            String linea = fuente + ": " + n.getTitular() + "\n";
-                            areaLog.append(linea);
-                            
-                            // Guardamos para el email
-                            informeCompleto.append("   ✔ ").append(fuente).append(": ").append(n.getTitular()).append("\n");
-
+                            areaLog.append(fuente + ": " + n.getTitular().substring(0, Math.min(n.getTitular().length(), 50)) + "...\n");
+                            informeCompleto.append(" ").append(fuente).append(": ").append(n.getTitular()).append("\n");
                         } catch (Exception ex) {
-                            String error = "ERROR en " + fuente + ": " + ex.getMessage() + "\n";
-                            areaLog.append(error);
+                            areaLog.append(" ERROR en " + fuente + ": " + ex.getMessage() + "\n");
                             informeCompleto.append("ERROR ").append(fuente).append("\n");
                         }
 
-                        // Actualizamos barra y hacemos scroll automático
                         contador++;
                         final int progreso = contador;
                         SwingUtilities.invokeLater(() -> {
                             barra.setValue(progreso);
                             areaLog.setCaretPosition(areaLog.getDocument().getLength());
                         });
-
-                        // Pequeña pausa para no saturar si quieres, o quitarla
-                        try { Thread.sleep(100); } catch (Exception e) {}
                     }
                     areaLog.append("\n");
                 }
 
-                areaLog.append("TEST FINALIZADO");
-                
-                // Habilitamos el botón de email al terminar
+                areaLog.append("TEST FINALIZADO CORRECTAMENTE");
                 SwingUtilities.invokeLater(() -> {
                     btnEnviarEmail.setEnabled(true);
-                    dialogoTest.setTitle("Test Finalizado");
+                    dialogoTest.setTitle("Diagnóstico Finalizado - Listo para enviar");
                 });
                 
-                // Acción del botón enviar
+
                 btnEnviarEmail.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         try {
                             GestionCorreo mailer = new GestionCorreo();
-                            // Enviamos el informe acumulado
-                            // Nota: Como es un informe largo, usamos el método genérico o adaptamos el asunto
-                            mailer.enviarNoticia(
-                                admin.getEmail(), 
-                                "INFORME TÉCNICO COMPLETO", 
-                                informeCompleto.toString()
-                            );
-                            
-                            JOptionPane.showMessageDialog(dialogoTest, "Informe enviado a: " + admin.getEmail());
-                            dialogoTest.dispose(); // Cerramos la ventana
+                            mailer.enviarNoticia(admin.getEmail(), "INFORME TÉCNICO DE SISTEMA", informeCompleto.toString());
+                            JOptionPane.showMessageDialog(dialogoTest, "Informe enviado correctamente a: " + admin.getEmail());
+                            dialogoTest.dispose();
                         } catch (Exception ex) {
-                            JOptionPane.showMessageDialog(dialogoTest, "Error al enviar: " + ex.getMessage());
+                            JOptionPane.showMessageDialog(dialogoTest, "Error enviando email: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                         }
                     }
                 });
             }
         });
-
         hilo.start();
-        dialogoTest.setVisible(true); // Mostramos la ventana
+        dialogoTest.setVisible(true);
     }
 }
